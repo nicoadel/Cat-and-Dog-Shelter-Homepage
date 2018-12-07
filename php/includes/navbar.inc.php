@@ -22,7 +22,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
