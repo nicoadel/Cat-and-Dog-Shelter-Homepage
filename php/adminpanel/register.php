@@ -10,7 +10,7 @@
 		<section class="section-default">
 			<h1>Signup</h1>
 			<br>
-			<form action="includes/signup.inc.php" method="post">
+			<form action="includes_admin/signup.inc.php" method="post">
 				<input class="form-control" type="text" name="uid" placeholder="Username">
 				<br>
 				<input class="form-control" type="text" name="mail" placeholder="E-Mail">
