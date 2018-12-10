@@ -1,0 +1,18 @@
+.wrapper-main{
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	margin-top: 200px;
+	padding: 30px;
+	border: 2px solid grey;
+}
+.section-default{
+	display: flex;
+	flex-flow: column;
+}
+.forminput{
+	height: 150px;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+}
