@@ -12,7 +12,7 @@
   </style>
 <div id="hero" class="container">
   <?php
-include "connect.php";
+include "inclides_admin/bdh.inc.php";
 
 
             $sql = "

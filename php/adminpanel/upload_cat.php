@@ -1,46 +1,96 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-  <title></title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>upload cat</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+ 
+
 </head>
+
 <body>
-<!-- IMAGE -->
-        <h5>Image</h5>
-        <div class='input-group'><select class='custom-select' id='inputGroupSelect04' name='image'>
-               <option value='#'>Choose a file</option>";
-          <?php   foreach ($rowsImg as $row) { ?>
-               <option value="<?php echo $row['image_id'] ?>"><?php echo $row['image_url'] ?></option>
-           <?php }; ?>
-            </select>
-            <div class='input-group-append'>
-                   <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#newimg'>
-                         Add new
-                    </button>
-                     </div>
-                </div>
-                <div class='modal fade' id='newimg' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-                  <div class='modal-dialog modal-dialog-centered' role='document'>
-                    <div class='modal-content'>
-                      <div class='modal-header'>
-                        <h5 class='modal-title' id='exampleModalLongTitle'>New Image</h5>
-                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                          <span aria-hidden='true'>&times;</span>
-                        </button>
-                      </div>
-                      <div class='modal-body'>
-                        <form  method='post'>
-                            <h5>Name</h5>
-                            <input class='form-control' aria-label='Publisher name' type='text' name='newimages'>
-                            <input class='btn btn-secondary btn-lg btn-block' type='submit' name='newurl' value='Add'>
-                        </div>
-                      <div class='modal-footer'>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div class="container">
+         <center><h2>Cat uploade</h2></center>
+       
+        <form action="includes_admin/upload_cats.inc.php" method="post" class="my-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">cat user id :</label>
+                <input type="text"
+                class="form-control"
+                name="cat_user_id"
+                placeholder="cat user id"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">cat name:</label>
+                <input type="text"
+                class="form-control"
+                name="cat_name"
+                placeholder=" cat name"
+                >
+              </div>
+
+   <div class="form-group">
+                <label for="exampleInputEmail1">born date:</label>
+                <input type="date"
+                class="form-control"
+                name="born_date"
+                placeholder="born date"
+                >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">height:</label>
+                <input type="text"
+                class="form-control"
+                name="height"
+                placeholder="height"
+                >
+              </div>
+
+                <div class="form-group">
+                <label for="exampleInputEmail1">weight:</label>
+                <input type="text"
+                class="form-control"
+                name="weight"
+                placeholder="weight"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">castration:</label>
+                <select class="custom-select" name="castration">
+                <option selected>Choose...</option>
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+              </select>
+              </div>
+
+               <div class="form-group">
+                <label for="exampleInputEmail1">image cat:</label>
+                <input type="text"
+                class="form-control"
+                name="image_cat"
+                placeholder="image_cat"
+                > </div>
+              <button type="submit" class=" btn btn-warning">
+                Insert cat
+              </button>
+
+              <a href="users.php">
+              <button type="button" class=" btn btn-warning">
+                Back
+              </button>
+                </a>
+            </form> 
+
+  </div>
 </body>
 </html>
