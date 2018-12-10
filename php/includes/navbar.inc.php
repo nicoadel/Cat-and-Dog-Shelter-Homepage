@@ -51,8 +51,8 @@
                 Dog & Cats
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Dogs</a>
-                <a class="dropdown-item" href="#">Cats</a>
+                <a class="dropdown-item" href="dogs.php">Dogs</a>
+                <a class="dropdown-item" href="cats.php">Cats</a>
                 <a class="dropdown-item" href="#">Search</a>
                 <a class="dropdown-item" href="#">Adopt</a>
                 <a class="dropdown-item" href="#">Support</a>
