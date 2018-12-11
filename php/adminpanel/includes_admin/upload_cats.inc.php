@@ -12,6 +12,7 @@ if($_POST) {
       $cat_desc =$_POST['cat_desc'];
   $type =$_POST['type'];
     $image_cat =$_POST['image_cat'];
+     $gender =$_POST['gender'];
 /*
     $adaption_name =$_POST['adaption_name'];
     $adaption_kind =$_POST['adaption_kind'];
@@ -36,7 +37,8 @@ if($_POST) {
             weight,
             castration,
             cat_desc,
-            type
+            type,
+            gender
 
 
             ) VALUES (
@@ -47,7 +49,8 @@ if($_POST) {
             '$weight',
             '$castration',
             '$cat_desc',
-            '$type'
+            '$type',
+            '$gender'
            
             )";
 

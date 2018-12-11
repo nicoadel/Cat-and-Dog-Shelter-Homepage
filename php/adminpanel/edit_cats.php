@@ -15,7 +15,7 @@ if($_GET['cat_id']) {
 
  
 
-    $sql = "SELECT * FROM media WHERE cat_id = {$cat_id}";
+    $sql = "SELECT * FROM cat WHERE cat_id = {$cat_id}";
 
     $result = $connect->query($sql);
 
