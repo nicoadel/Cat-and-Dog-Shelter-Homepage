@@ -9,24 +9,10 @@ if($_POST) {
     $height =$_POST['height'];
     $weight =$_POST['weight'];
     $castration =$_POST['castration'];
-
+      $cat_desc =$_POST['cat_desc'];
+  $type =$_POST['type'];
     $image_cat =$_POST['image_cat'];
-/*
-    $adaption_name =$_POST['adaption_name'];
-    $adaption_kind =$_POST['adaption_kind'];
-    $adaption_address =$_POST['adaption_address'];
-    $adaption_email =$_POST['adaption_email'];
-    $adaption_replacement =$_POST['adaption_replacement'];
-    $adaption_other_pets =$_POST['adaption_other_pets'];
-    $adaption_caption =$_POST['adaption_caption'];
-    $adaption_kind_of_pets =$_POST['adaption_kind_of_pets'];
-    $telephone_number1 =$_POST['telephone_number1'];
-    $telephone_number2 =$_POST['telephone_number2'];
-    $other_pet =$_POST['other_pet'];
-*/
     
-
-
     $sql = "UPDATE cat SET
             cat_user_id = $cat_user_id,
             cat_name = '$cat_name',
@@ -34,6 +20,8 @@ if($_POST) {
             height =    '$height',
             weight  = '$weight' ,
             castration =  '$castration',
+             cat_desc =  '$cat_desc',
+              type =  '$type'
 
             WHERE cat_id = {$cat_id}";
 
@@ -42,36 +30,6 @@ if($_POST) {
         WHERE image_cat_id = '{$image_cat_id}'
 
             )";
-/*
-    $sql2 = "INSERT INTO adaption (
-            adaption_name,
-            adaption_kind,
-            adaption_address,
-            adaption_email,
-            adaption_replacement,
-            adaption_other_pets,
-            adaption_caption,
-            adaption_kind_of_pets,
-           telephone_number1,
-           telephone_number2,
-           other_pet
-       
-
-            ) VALUES (
-            '$adaption_name,'
-            '$adaption_kind',
-            '$adaption_address',
-            '$adaption_email',
-            '$adaption_replacement',
-            '$adaption_other_pets',
-            '$adaption_caption',
-            '$adaption_kind_of_pets',
-            $telephone_number1,
-            $telephone_number2,
-            $other_pet
-       
-            )";
-            */
    if($connect->query($sql) === TRUE) {
         echo'<html>
 

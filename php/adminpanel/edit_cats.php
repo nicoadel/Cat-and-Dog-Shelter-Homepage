@@ -5,7 +5,7 @@ session_start();
 
  
 
-require_once 'dbh.inc.php';
+require_once 'includes_admin/dbh.inc.php';
 
  
 
@@ -15,7 +15,7 @@ if($_GET['cat_id']) {
 
  
 
-    $sql = "SELECT * FROM media WHERE cat_id = {$cat_id}";
+    $sql = "SELECT * FROM cat WHERE cat_id = {$cat_id}";
 
     $result = $connect->query($sql);
 

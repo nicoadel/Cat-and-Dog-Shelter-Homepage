@@ -87,6 +87,13 @@
                 name="type"
                 placeholder="type"
                 > </div>
+                                        <div class="form-group">
+                <label for="exampleInputEmail1">cat gender:</label>
+                <input type="text"
+                class="form-control"
+                name="gender"
+                placeholder="gender"
+                > </div>
 
                <div class="form-group">
                 <label for="exampleInputEmail1">image cat:</label>
