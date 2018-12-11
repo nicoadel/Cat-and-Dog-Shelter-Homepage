@@ -35,7 +35,7 @@
               <a class="dropdown-item" href="ourmission.php">Our Mission</a>
               <a class="dropdown-item" href="team_page.php">Our Team</a>
               <a class="dropdown-item" href="sponsors.php">Sponsors</a>
-              <a class="dropdown-item" href="gallery.php">Gallery</a>
+              <a class="dropdown-item" href="./gallary.php">Gallery</a>
             </div>
           </li>
           <li class="nav-item dropdown">
