@@ -58,8 +58,8 @@
 /* The picture (background) */
 .picture {
     display: none; /* Hidden by default */
-    position: absolute; /* Stay in place */
-    z-index: 99; /* Sit on top */
+    position: fixed; /* Stay in place */
+    z-index: 214747; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -72,6 +72,7 @@
 
 /* picture Content (image) */
 .picture-content {
+   z-index: 21447;
     margin: auto;
     display: block;
     width: 80%;

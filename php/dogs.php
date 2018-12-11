@@ -64,19 +64,19 @@ include("includes/output_dog.inc.php");
 				      </div>
 				    </div>
 				  </div>
-				  
-					 <div id="mypicture" class="picture">
-						  <span id="sca" class="close">ix &times;</span>
-						  <img class="picture-content" src="#">
-						  <div id="caption"></div>
-			 		</div> 
+
+					
 				</div>
 			<?php }; ?>
-
+ 
+			 		</div> 
 			</div><!--inside row ends-->
 		</div><!--col-10 ends-->
 	</div>
-			<!--row ends-->	
+		<div id="mypicture" class="picture">
+			<span id="sca" class="close">ix &times;</span>
+			<img class="picture-content" src="#">
+		<div id="caption"></div>	<!--row ends-->	
 </div><!--container ends-->	
 <script>
 // Get thepicture
@@ -87,6 +87,7 @@ function reply_click(x){
 	console.log(pictureSrc);
 	//var bigPic = $('#img01');
 	bigPic[0].src = pictureSrc;
+
 	
 	picBlock.style.display='block';
 
