@@ -29,12 +29,12 @@ We are open 365 days a year!</p>
 <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
 <!--headin5_amrc-->
 <ul class="footer_ul_amrc">
-<li><a href="#">Who are we?</a></li>
-<li><a href="#">Photos</a></li>
-<li><a href="#">Sponsors</a></li>
-<li><a href="#">Monthly Reports</a></li>
-<li><a href="#">Information</a></li>
-<li><a href="#">Contact us</a></li>
+<li><a href="#"><i class="fas fa-angle-right"></i> Who are we?</a></li>
+<li><a href="#"><i class="fas fa-angle-right"></i> Photos</a></li>
+<li><a href="#"><i class="fas fa-angle-right"></i> Sponsors</a></li>
+<li><a href="#"><i class="fas fa-angle-right"></i> Monthly Reports</a></li>
+<li><a href="#"><i class="fas fa-angle-right"></i> Information</a></li>
+<li><a href="#"><i class="fas fa-angle-right"></i> Contact us</a></li>
 </ul>
 <!--footer_ul_amrc ends here-->
 </div>

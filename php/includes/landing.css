@@ -13,7 +13,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: 450px;
+  height: 480px;
 }
 
 header.masthead .intro-text {
@@ -114,9 +114,7 @@ header.masthead .intro-text .intro-heading {
   padding-left: 5px;
 }
 
-
-
-
+/* */
 
 .conttainer{
   text-align: center;
