@@ -56,7 +56,7 @@
             <a class="nav-link js-scroll-trigger" href="reports.php">Reports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

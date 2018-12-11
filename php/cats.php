@@ -13,7 +13,6 @@ include("includes/output_cat.inc.php");
 		
 			<hr>
 		</div>
-		   
 		<div class="col-10 offset-1">
 			<div class="row">
 				<?php foreach($data as $row){  ?>
@@ -26,8 +25,8 @@ include("includes/output_cat.inc.php");
 								foreach($row["cat_id"] as $subkey => $subvalue){ 
 							 echo $subkey;};
 							 ?>">More..</button>
-							<button class="btn btn-success btn-block mb-2 buttons">Support</button>
-							<button class="btn btn-success btn-block buttons">Adopt</button>
+							<button class="btn btn-success btn-block mb-2 buttons"  type="button" data-toggle="modal" data-target="#supportModal<?php echo $row["cat_id"]; ?>">Support</button>
+                            <button class="btn btn-success btn-block buttons" type="button" data-toggle="modal" data-target="#adoptModal<?php echo $row["cat_id"]; ?>">Adopt</button>
 						</div>
 					</div>
 				</div>
@@ -64,10 +63,10 @@ include("includes/output_cat.inc.php");
 				      </div>
 				    </div>
 				  </div>
-					 
 				</div>
+				
 			<?php }; ?>
-
+				
 			</div><!--inside row ends-->
 		</div><!--col-10 ends-->
 	</div>
