@@ -89,7 +89,7 @@ if($_POST) {
        
             )";
             */
-    if($connect->query($sql) === TRUE) {
+    if($conn->query($sql) === TRUE) {
     echo'<html>
 
     <head>
@@ -105,12 +105,12 @@ if($_POST) {
 
     } else {
 
-        echo "Error " . $sql . ' ' . $connect->connect_error;
+        echo "Error " . $sql . ' ' . $conn->connect_error;
 
     }
 
 
-        if($connect->query($sql1) === TRUE) {
+        if($conn->query($sql1) === TRUE) {
     echo'<html>
 
     <head>
@@ -135,7 +135,7 @@ if($_POST) {
             </html>';
     } else {
 
-        echo "Error " . $sql1 . ' ' . $connect->connect_error;
+        echo "Error " . $sql1 . ' ' . $conn->connect_error;
 
     }
 /*
@@ -169,7 +169,7 @@ if($_POST) {
 
     }
 */
-    $connect->close();
+    $conn->close();
 
 }
 

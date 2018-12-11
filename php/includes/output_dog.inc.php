@@ -1,6 +1,7 @@
 <?php 
 
-$sql1 = "SELECT *FROM dog JOIN main_image_dog ON dog.dog_id = main_image_dog.fk_dog_id JOIN image_dog ON dog.dog_id = image_dog.fk_dog_id";
+$sql1 = "SELECT * FROM dog LEFT JOIN main_image_dog ON dog.dog_id = main_image_dog.fk_dog_id LEFT JOIN image_dog ON dog.dog_id = image_dog.fk_dog_id LEFT JOIN adaption ON dog.dog_id = adaption.fk_dog_id
+	WHERE adaption.fk_dog_id IS NULL ORDER BY dog_name";
 
 $result=mysqli_query($conn, $sql1);
 $data = array();
