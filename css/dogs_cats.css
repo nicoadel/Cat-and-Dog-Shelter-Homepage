@@ -15,9 +15,7 @@
  .buttons_div {
   display: none;
 }
-#img_modal_large{
-  z-index: 99999;
-}
+
 .buttons {
 	border-radius: 24px!important;
 }

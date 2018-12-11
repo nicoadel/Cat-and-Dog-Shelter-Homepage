@@ -1,5 +1,8 @@
+<?php 
+
 $sql1 = "SELECT *FROM cat JOIN main_image_cat ON cat.cat_id = main_image_cat.fk_cat_id JOIN image_cat ON cat.cat_id = image_cat.fk_cat_id";
- $result=mysqli_query($conn, $sql1);
+
+$result=mysqli_query($conn, $sql1);
 $data = array();
 while($row = mysqli_fetch_array($result)){
 	$data[$row['cat_id']]['cat_name'] = $row['cat_name'];
@@ -15,3 +18,10 @@ while($row = mysqli_fetch_array($result)){
 		'first'=>$row["image_cat"],
 	);
 };
+
+ ?>
+
+
+
+
+

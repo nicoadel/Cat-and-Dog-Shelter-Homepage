@@ -1,5 +1,7 @@
 <?php 
+
 $sql1 = "SELECT *FROM dog JOIN main_image_dog ON dog.dog_id = main_image_dog.fk_dog_id JOIN image_dog ON dog.dog_id = image_dog.fk_dog_id";
+
 $result=mysqli_query($conn, $sql1);
 $data = array();
 while($row = mysqli_fetch_array($result)){
@@ -16,4 +18,6 @@ while($row = mysqli_fetch_array($result)){
 		'first'=>$row["image_dog"],
 	);
 };
+
  ?>
+

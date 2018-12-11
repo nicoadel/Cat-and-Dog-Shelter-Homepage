@@ -15,7 +15,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
     <script src="../js/agency.js"></script>
     <!-- Custom fonts for this template -->
 
@@ -29,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="landing.php">Útulok Piešťany</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Útulok Piešťany</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -41,9 +40,9 @@
                 About us
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="mission.php">Our Mission</a>
-                <a class="dropdown-item" href="team_page.php">Our Team</a>
-                <a class="dropdown-item" href="sponsors.php">Sponsors</a>
+                <a class="dropdown-item" href="#">Our Mission</a>
+                <a class="dropdown-item" href="#">Our Team</a>
+                <a class="dropdown-item" href="#">Sponsors</a>
                 <a class="dropdown-item" href="#">Gallery</a>
               </div>
             </li>
@@ -61,7 +60,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="reports.php">Reports</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Reports</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
