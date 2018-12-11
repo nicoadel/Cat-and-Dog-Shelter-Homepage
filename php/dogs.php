@@ -10,23 +10,29 @@ include("includes/output_dog.inc.php");
 	<div class="row">
 		<div class="col-10 offset-1">
 			<h1>Dogs</h1>
+		
 			<hr>
 		</div>
+		   
 		<div class="col-10 offset-1">
 			<div class="row">
-				<?php foreach( $dogResult as $row) { ?>				 
+				<?php foreach($data as $row){  ?>
+
 				<div class="part_divs col-md-3 offset-md-1 col-sm-5 offset-sm-2 mb-4 mt-2">
 					<div class="small_parts">
-						<img class="imag" src="<?php echo $row["image_dog"]; ?>" alt="">
+						<img class="imag" src="<?php echo $row["main_image"]; ?>" alt="">
 						<div class="buttons_div">
-							<button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php echo $row["dog_id"]; ?>">More..</button>
+							<button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php
+								foreach($row["dog_id"] as $subkey => $subvalue){ 
+							 echo $subkey;};
+							 ?>">More..</button>
 							<button class="btn btn-success btn-block mb-2 buttons">Support</button>
 							<button class="btn btn-success btn-block buttons">Adopt</button>
 						</div>
 					</div>
 				</div>
-				<!-- More.. Modal -->
-				<div class="modal fade" id="moreModal<?php echo $row["dog_id"]; ?>" tabindex="-1" role="dialog" aria-labelledby="moreModalLabel" aria-hidden="true">
+				<div class="modal fade" id="moreModal<?php foreach($row["dog_id"] as $subkey => $subvalue){ 
+							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="moreModalLabel" aria-hidden="true">
 				  <div class="modal-dialog  modal-lg" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -37,6 +43,7 @@ include("includes/output_dog.inc.php");
 				      </div>
 				      <div class="modal-body">
 				        <b>Name:</b> <?php echo $row["dog_name"]; ?> <br>
+				        <b>Type:</b> <?php echo $row["type"]; ?> <br>
 				        <b>Born:</b> <?php echo $row["born_date"]; ?> <br>
 				        <b>Height:</b> <?php echo $row["height"]; ?> <br>
 				        <b>Weight:</b> <?php echo $row["weight"]; ?> <br>
@@ -45,9 +52,11 @@ include("includes/output_dog.inc.php");
 				      </div>
 				      <div class="container">
 					      <div class="row mx-2">
+					      	<?php foreach($row["dog_id"] as $subkey => $subvalue){ ?>
 					      	<div class="col-2 my-2">
-					      		<img class="gallery_image" id="myImg" width="100%" height="90" style="object-fit: cover;" src="<?php echo $row["image_dog"]; ?>" alt="">
+					      		<img class="gallery_image" id="myImg<?php echo $subkey ?>" onClick="reply_click(this.id)" width="100%" height="90" style="object-fit: cover;" src="<?php echo $subvalue["first"]; ?>" alt="">
 					      	</div>
+					      <?php }; ?>
 					      </div>
 					  </div>
 				      <div class="modal-footer">
@@ -55,21 +64,48 @@ include("includes/output_dog.inc.php");
 				      </div>
 				    </div>
 				  </div>
+				  
+					 <div id="mypicture" class="picture">
+						  <span id="sca" class="close">ix &times;</span>
+						  <img class="picture-content" src="#">
+						  <div id="caption"></div>
+			 		</div> 
 				</div>
-				<div id="img_modal_large" class="modal hide fade" tabindex="-1" data-focus-on="input:first">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                      </div>
-                     <div class="modal-body">
-                      <img src="<?php echo $row["image_dog"]; ?>" alt="">
-                     </div>
-                     <div class="modal-footer">
-                      <button type="button" data-dismiss="modal" class="btn">Close</button>
-                    </div>
-                </div>
 			<?php }; ?>
+
 			</div><!--inside row ends-->
 		</div><!--col-10 ends-->
-	</div><!--row ends-->	
+	</div>
+			<!--row ends-->	
 </div><!--container ends-->	
+<script>
+// Get thepicture
+var picBlock = document.getElementById("mypicture");
+var bigPic = document.getElementsByClassName('picture-content');
+function reply_click(x){
+	var pictureSrc = $('#'+x).attr('src');
+	console.log(pictureSrc);
+	//var bigPic = $('#img01');
+	bigPic[0].src = pictureSrc;
+	
+	picBlock.style.display='block';
+}
+/*function reply_click(clicked_id){
+	var img = $('#'+clicked_id).attr('src');
+	console.log("CSákü maákó: "+clicked_id);
+	var pictureImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+   picture.style.display = "block";
+   pictureImg.src = img;
+    
+}
+// Get the image and insert it inside thepicture - use its "alt" text as a caption
+;
+// Get the <span> element that closes thepicture
+// When the user clicks on <span> (x), close thepicture*/
+$("#sca").click(function(){
+    picBlock.style.display = "none";
+   	bigPic[0].src = ""; 
+});
+</script>
 <?php include("includes/footer.inc.php"); ?>
