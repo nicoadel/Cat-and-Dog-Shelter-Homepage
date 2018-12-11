@@ -1,6 +1,11 @@
-
+.upper_part{
+  height: 200px!important;
+  background-color: #a3b7cf;
+}
+.break{
+  height: 100px;
+}
 header.masthead {
-  padding-top: 100px;
   text-align: center;
   color: white;
   background-image: url("../img/header- bg.jpg");
@@ -8,12 +13,12 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: 600px;
+  height: 480px;
 }
 
 header.masthead .intro-text {
-  padding-top: 150px;
-  padding-bottom: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 header.masthead .intro-text .intro-lead-in {
@@ -52,7 +57,14 @@ header.masthead .intro-text .intro-heading {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   }
 }
-
+.welcome {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.donate {
+  font-size: 32px!important;
+}
 .service-heading {
   margin: 15px 0;
   text-transform: none;
@@ -60,10 +72,12 @@ header.masthead .intro-text .intro-heading {
 .righttext {
   padding: 20%;
   color: grey;
+  margin:auto;
 }
 .righttext h1 {
-  
-  }
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 72px;
+}
 .carousel-item img {
   width: 30vw;
   height: 100%;
@@ -71,6 +85,11 @@ header.masthead .intro-text .intro-heading {
 }
 .part2 {
   background-color: #a3b7cf;
+  padding: 20px 0;
+}
+.part3 {
+  background-color: white;
+  padding: 20px 0!important;
 }
 .smallpic {
   width: 100%;
@@ -93,4 +112,55 @@ header.masthead .intro-text .intro-heading {
 }
 .bottomtext p{
   padding-left: 5px;
+}
+
+/* */
+
+.conttainer{
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+.conttainer span{
+  text-transform: uppercase;
+  display: block;
+}
+.mytext1{
+  color: white;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  background: #263238;
+  position: relative;
+  animation: text 3s 1;
+
+}
+.mytext2{
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+@keyframes text {
+  0%{
+    color: black;
+    margin-bottom: -40px;
+
+  }
+  30%{
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+
+  }
+  85%{
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+
+  }
 }
