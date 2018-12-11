@@ -74,6 +74,21 @@
               </div>
 
                <div class="form-group">
+                <label for="exampleInputEmail1">dog description:</label>
+                <input type="text"
+                class="form-control"
+                name="dog_desc"
+                placeholder="dog_desc"
+                > </div>
+                        <div class="form-group">
+                <label for="exampleInputEmail1">dog type:</label>
+                <input type="text"
+                class="form-control"
+                name="type"
+                placeholder="type"
+                > </div>
+
+               <div class="form-group">
                 <label for="exampleInputEmail1">image dog:</label>
                 <input type="text"
                 class="form-control"
@@ -94,3 +109,4 @@
   </div>
 </body>
 </html>
+
