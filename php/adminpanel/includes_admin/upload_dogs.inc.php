@@ -9,7 +9,8 @@ if($_POST) {
     $height =$_POST['height'];
     $weight =$_POST['weight'];
     $castration =$_POST['castration'];
-
+      $dog_desc =$_POST['dog_desc'];
+  $type =$_POST['type'];
     $image_dog =$_POST['image_dog'];
 /*
     $adaption_name =$_POST['adaption_name'];
@@ -34,9 +35,9 @@ if($_POST) {
             height,
             weight,
             castration,
-            fk_adaption_id,
-            fk_dog_image,
-            fk_supporter
+            dog_desc,
+            type
+
 
             ) VALUES (
             $dog_user_id,
@@ -45,13 +46,17 @@ if($_POST) {
             '$height',
             '$weight',
             '$castration',
-             1,1,1
+            '$dog_desc',
+            '$type'
+           
             )";
 
     $sql1 = "INSERT INTO image_dog (
-            image_dog
+            image_dog,
+            fk_dog_id
             ) VALUES (
-            '$image_dog'
+            '$image_dog',
+         11
        
             )";
 /*

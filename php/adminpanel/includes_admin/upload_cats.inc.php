@@ -9,7 +9,8 @@ if($_POST) {
     $height =$_POST['height'];
     $weight =$_POST['weight'];
     $castration =$_POST['castration'];
-
+      $cat_desc =$_POST['cat_desc'];
+  $type =$_POST['type'];
     $image_cat =$_POST['image_cat'];
 /*
     $adaption_name =$_POST['adaption_name'];
@@ -34,9 +35,9 @@ if($_POST) {
             height,
             weight,
             castration,
-            fk_adaption_id,
-            fk_cat_image,
-            fk_supporter
+            cat_desc,
+            type
+
 
             ) VALUES (
             $cat_user_id,
@@ -45,13 +46,17 @@ if($_POST) {
             '$height',
             '$weight',
             '$castration',
-             1,1,1
+            '$cat_desc',
+            '$type'
+           
             )";
 
     $sql1 = "INSERT INTO image_cat (
-            image_cat
+            image_cat,
+            fk_cat_id
             ) VALUES (
-            '$image_cat'
+            '$image_cat',
+            4
        
             )";
 /*

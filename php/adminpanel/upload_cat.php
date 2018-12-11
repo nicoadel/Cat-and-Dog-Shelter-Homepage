@@ -75,6 +75,21 @@
               </div>
 
                <div class="form-group">
+                <label for="exampleInputEmail1">cat description:</label>
+                <input type="text"
+                class="form-control"
+                name="cat_desc"
+                placeholder="cat_desc"
+                > </div>
+                        <div class="form-group">
+                <label for="exampleInputEmail1">cat type:</label>
+                <input type="text"
+                class="form-control"
+                name="type"
+                placeholder="type"
+                > </div>
+
+               <div class="form-group">
                 <label for="exampleInputEmail1">image cat:</label>
                 <input type="text"
                 class="form-control"
