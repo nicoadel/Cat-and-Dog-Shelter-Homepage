@@ -11,9 +11,6 @@
   </style>
 <div id="hero" class="container">
   <?php
-include "inclides_admin/bdh.inc.php";
-=======
-<?php 
 include("includes/dbh.inc.php");
 include("includes/navbar.inc.php");
 include("includes/output_cat.inc.php");

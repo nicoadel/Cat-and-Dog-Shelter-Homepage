@@ -55,36 +55,21 @@ include("includes/output_dog.inc.php");
 				      </div>
 				    </div>
 				  </div>
-					  <div id="mypicture" class="picture">
-						  <span id="sca" class="close">ix &times;</span>
-						  <img class="picture-content" id="img01">
-						  <div id="caption"></div>
-			 		</div>
 				</div>
+				<div id="img_modal_large" class="modal hide fade" tabindex="-1" data-focus-on="input:first">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      </div>
+                     <div class="modal-body">
+                      <img src="<?php echo $row["image_dog"]; ?>" alt="">
+                     </div>
+                     <div class="modal-footer">
+                      <button type="button" data-dismiss="modal" class="btn">Close</button>
+                    </div>
+                </div>
 			<?php }; ?>
 			</div><!--inside row ends-->
 		</div><!--col-10 ends-->
 	</div><!--row ends-->	
 </div><!--container ends-->	
-<script>
-// Get thepicture
-var picture = document.getElementById('mypicture');
-
-// Get the image and insert it inside thepicture - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var pictureImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-   picture.style.display = "block";
-   pictureImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes thepicture
-var span = document.document.getElementById("sca");
-// When the user clicks on <span> (x), close thepicture
-span.onclick = function() { 
-   picture.style.display = "none!important";
-   console.log("HEY");
-}
-</script>
 <?php include("includes/footer.inc.php"); ?>

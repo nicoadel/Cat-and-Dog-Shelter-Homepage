@@ -34,7 +34,7 @@
           <div class="col-5">
             <div class="righttext">
               <h1 class="pb-3">Útulok Piešťany</h1>
-              <button class="btn btn-success mt-3 ">donate</button>
+              <button class="btn btn-success mt-3 ">Donate</button>
             </div>
             
           </div>

@@ -1,12 +1,12 @@
 <?php 
-$servername = "127.0.0.1";
-$username = "root";
-$password = ""; 
-$dbname = "piestany";
+$servername = "mustafa.codefactory.live";
+$username = "mustafac_piestan";
+$password = "cosmos@@"; 
+$dbname = "mustafac_piestany";
 // Create connection
-$connect = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if (!$connect) {
+if (!$conn) {
    die("Connection failed: " . mysqli_connect_error() . "\n");
 }
 ?>

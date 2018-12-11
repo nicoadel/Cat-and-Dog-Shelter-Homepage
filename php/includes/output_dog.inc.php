@@ -1,9 +1,10 @@
 <?php 
 
  $sql = "SELECT * FROM dog
-  		 INNER JOIN  adaption on  dog.fk_adaption_id = adaption.adaption_id
-  		 INNER JOIN image_dog on  dog.fk_image_dog = image_dog.image_dog_id
-  		 INNER JOIN supporter on  dog.fk_support = supporter.supporter_id";
+         JOIN main_image_dog ON dog.dog_id = main_image_dog.fk_dog_id
+         JOIN image_dog ON dog.dog_id = image_dog.fk_dog_id
+         JOIN adaption ON dog.dog_id = adaption.fk_dog_id
+         JOIN supporter ON dog.dog_id = supporter.fk_dog_id";
 
 $dogRows = mysqli_query($conn, $sql);
 

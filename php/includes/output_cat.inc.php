@@ -1,9 +1,10 @@
 <?php 
 
  $sql = "SELECT * FROM cat
-         INNER JOIN  adaption on  cat.fk_adaption_id = adaption.adaption_id
-         INNER JOIN image_cat on  cat.fk_cat_image = image_cat.image_cat_id
-         INNER JOIN supporter on  cat.fk_supporter = supporter.supporter_id";
+         JOIN main_image_cat ON cat.cat_id = main_image_cat.fk_cat_id
+         JOIN image_cat ON cat.cat_id = image_cat.fk_cat_id
+         JOIN adaption ON cat.cat_id = adaption.fk_cat_id
+         JOIN supporter ON cat.cat_id = supporter.fk_cat_id";
 
 
 $catRows = mysqli_query($conn, $sql);

@@ -16,8 +16,9 @@
 </head>
 
 <body>
+  <?php include_once "includes_admin/navbar.inc.php"; ?>
         <div class="container">
-         <center><h2>dog uploade</h2></center>
+         <center><h2>Dog Upload</h2></center>
        
         <form action="includes_admin/upload_dogs.inc.php" method="post" class="my-4">
               <div class="form-group">
