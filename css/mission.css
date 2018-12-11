@@ -1,0 +1,19 @@
+
+.container_mission{
+	margin-top: 6%;
+	margin-bottom: 2%;
+	height:100%;
+	display: flex;
+font-family: 'Noto Serif TC', serif;
+}
+.container_right {
+	width: 50%;
+	height: 100%;
+	padding: 20px;
+	}
+.container_left{
+	width: 50%;
+}
+.container_left img {
+	width: 100%;
+} 
