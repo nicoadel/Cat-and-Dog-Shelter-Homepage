@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
+
     <title>Útulok Piešťany</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -15,7 +17,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="../js/agency.js"></script>
     <!-- Custom fonts for this template -->
-    
 
     <!-- Custom styles for this template -->
     <link href="../css/header.css" rel="stylesheet">
@@ -50,8 +51,8 @@
                 Dog & Cats
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Dogs</a>
-                <a class="dropdown-item" href="#">Cats</a>
+                <a class="dropdown-item" href="dogs.php">Dogs</a>
+                <a class="dropdown-item" href="cats.php">Cats</a>
                 <a class="dropdown-item" href="#">Search</a>
                 <a class="dropdown-item" href="#">Adopt</a>
                 <a class="dropdown-item" href="#">Support</a>
