@@ -10,7 +10,7 @@ include("includes/output_dog.inc.php");
 	<div class="row">
 		<div class="col-10 offset-1">
 			<h1>Dogs</h1>
-		
+		<?php var_dump($data) ?>
 			<hr>
 		</div>
 		   
@@ -22,9 +22,7 @@ include("includes/output_dog.inc.php");
 					<div class="small_parts">
 						<img class="imag" src="<?php echo $row["main_image"]; ?>" alt="">
 						<div class="buttons_div">
-							<button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php
-								foreach($row["dog_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>">More..</button>
+							<button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php echo $row["dog_id"]; ?>">More..</button>
 							<button class="btn btn-success btn-block mb-2 buttons"  type="button" data-toggle="modal" data-target="#supportModal<?php
 								foreach($row["dog_id"] as $subkey => $subvalue){ 
 							 echo $subkey;};?>">Support</button>
@@ -35,8 +33,7 @@ include("includes/output_dog.inc.php");
 					</div>
 				</div>
 				<!--More modal-->
-				<div class="modal fade" id="moreModal<?php foreach($row["dog_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="moreModalLabel" aria-hidden="true">
+				<div class="modal fade" id="moreModal<?php echo $row["dog_id"]; ?>" tabindex="-1" role="dialog" aria-labelledby="moreModalLabel" aria-hidden="true">
 				  <div class="modal-dialog  modal-lg" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -56,9 +53,9 @@ include("includes/output_dog.inc.php");
 				      </div>
 				      <div class="container">
 					      <div class="row mx-2">
-					      	<?php foreach($row["dog_id"] as $subkey => $subvalue){ ?>
+					      	<?php foreach($row["image_dog"] as $subkey => $subvalue){ ?>
 					      	<div class="col-2 my-2">
-					      		<img class="gallery_image" id="myImg<?php echo $subkey ?>" onClick="reply_click(this.id)" width="100%" height="90" style="object-fit: cover;" src="<?php echo $subvalue["first"]; ?>" alt="">
+					      		<img class="gallery_image" id="myImg<?php echo $row['dog_id'] ?>" onClick="reply_click(this.id)" width="100%" height="90" style="object-fit: cover;" src="<?php echo $subkey; ?>" alt="">
 					      	</div>
 					      <?php }; ?>
 					      </div>
