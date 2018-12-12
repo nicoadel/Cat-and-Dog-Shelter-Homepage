@@ -19,7 +19,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">  <img class="logo" src="../img/logo.png" alt="l" width="50">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"> 
+      <a class="navbar-brand js-scroll-trigger" href="landing.php"> 
 Útulok Piešťany</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -56,7 +56,7 @@
             <a class="nav-link js-scroll-trigger" href="reports.php">Reports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
