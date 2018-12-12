@@ -26,8 +26,7 @@ include("includes/output_adopted.inc.php");
 								foreach($row["dog_id"] as $subkey => $subvalue){ 
 							 echo $subkey;};
 							 ?>">More..</button>
-							<button class="btn btn-success btn-block mb-2 buttons">Support</button>
-							<button class="btn btn-success btn-block buttons">Adopt</button>
+							
 						</div>
 					</div>
 				</div>
