@@ -39,7 +39,12 @@
           <div class="col-5">
             <div class="righttext">
               <h1 class="pb-3">Útulok Piešťany</h1>
-              <button class="btn btn-success mt-3 donate">donate</button>
+               <form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="9NW8L34KBXKNG">
+                <button class="btn btn-success mt-3 donate">donate</button>
+            </form>
+             
             </div>
           </div>
         </div>
@@ -94,20 +99,23 @@
         </div>
         <div class="col-10 offset-1 ">
           <div class="row justify-content-between">
+            
              <div class="col-lg-6 col-md-12 mb-4 smallbox">
                <img class="smallpic" src="../img/photo-1489777404823-acccdc7d9994.jpg" alt="">
-               <div class="top-left"><span class="imgtext">How to adopt?</span></div>
+               <div class="top-left"><span class="imgtext landing_link">How to adopt?</span></div>
                <div class="bottomtext">
-                 <p>bla bla bla</p>
+                 <p class="landing_link">bla bla bla</p>
                </div>
              </div>
+             
+             
              <div class="col-lg-6 col-md-12 mb-4 smallbox">
                <img class="smallpic" src="../img/dog-1369362.jpg" alt="">
-               <div class="top-left"><span class="imgtext">Why support?</span></div>
+               <div class="top-left"><span class="imgtext landing_link">Why support?</span></div>
                <div class="bottomtext">
-                 <p>bla bla bla</p>
+                 <p class="landing_link">bla bla bla</p>
                </div>
-             </div>
+             </div> 
             </div>
         </div>
        </div>

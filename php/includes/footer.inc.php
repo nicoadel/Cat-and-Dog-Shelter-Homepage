@@ -29,12 +29,12 @@ We are open 365 days a year!</p>
 <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
 <!--headin5_amrc-->
 <ul class="footer_ul_amrc">
-<li><a href="#"><i class="fas fa-angle-right"></i> Who are we?</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Photos</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Sponsors</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Monthly Reports</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Information</a></li>
-<li><a href="#"><i class="fas fa-angle-right"></i> Contact us</a></li>
+<li><a href="ourmission.php"><i class="fas fa-angle-right"></i> Our mission</a></li>
+<li><a href="team_page.php"><i class="fas fa-angle-right"></i> Our team</a></li>
+<li><a href="sponsors.php"><i class="fas fa-angle-right"></i> Sponsors</a></li>
+<li><a href="gallary.php"><i class="fas fa-angle-right"></i> Shelter</a></li>
+<li><a href="reports.php"><i class="fas fa-angle-right"></i> Reports</a></li>
+<li><a href="contact.php"><i class="fas fa-angle-right"></i> Contact us</a></li>
 </ul>
 <!--footer_ul_amrc ends here-->
 </div>
@@ -44,11 +44,13 @@ We are open 365 days a year!</p>
 <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
 <!--headin5_amrc-->
 <ul class="footer_ul_amrc">
-<li><a href="#">Dogs</a></li>
-<li><a href="#">Cats</a></li>
-<li><a href="#">Sponsorship</a></li>
-<li><a href="#">Already found a home</a></li>
-<li><a href="#">We mourn..</a></li>
+<li><a href="dogs.php"><i class="fas fa-angle-right"></i>Dogs</a></li>
+<li><a href="cats.php"><i class="fas fa-angle-right"></i>Cats</a></li>
+<li><a href="search.php"><i class="fas fa-angle-right"></i>Search</a></li>
+<li><a href="adoption.php"><i class="fas fa-angle-right"></i>Adopt</a></li>
+<li><a href="support.php"><i class="fas fa-angle-right"></i>Support</a></li>
+<li><a href="adopted.php"><i class="fas fa-angle-right"></i>In Happy Home</a></li>
+<li><a href="in_memoriam.php"><i class="fas fa-angle-right"></i>In memoriam</a></li>
 </ul>
 <!--footer_ul_amrc ends here-->
 </div>
