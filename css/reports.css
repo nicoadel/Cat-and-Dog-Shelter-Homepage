@@ -1,3 +1,13 @@
 .break {
 	height: 150px;
 }
+.backg2 {
+  background-image: url(../img/adorable-animal-cat-1440387.jpg);
+  background-color: #17234E;
+    margin-bottom: 0;`enter code here`
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}

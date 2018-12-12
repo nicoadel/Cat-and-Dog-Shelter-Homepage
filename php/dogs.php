@@ -10,18 +10,19 @@ include("includes/upload_adopt.inc.php");
 <div class="break">
 </div>
 <div class="container">
-	<div class="row">
-		<div class="col-10 offset-1">
-			<h1>Dogs</h1>
-			<hr>
-		</div>
-		   
-		<div class="col-10 offset-1">
-			<div class="row">
-        <?php foreach($data as $row){  ?>
+  <div class="row">
+    <div class="col-10 offset-1">
+      <h1>Dogs</h1>
+      <hr>
+    </div>
+       
+    <div class="col-10 offset-1">
+      <div class="row">
+        <?php $i=0;
+        foreach($data as $row){  ?>
         <div class="part_divs col-md-3 offset-md-1 col-sm-5 offset-sm-2 mb-4 mt-2">
           <div class="small_parts">
-            <img class="imag" src="<?php echo $row["main_image"]; ?>" alt="">
+            <img class="imag" src="../image_upload/<?php echo $row["main_image"]; ?>" alt="">
             <div class="buttons_div">
               <button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php
                 echo $row["dog_id"];?>">More..</button>
@@ -55,9 +56,9 @@ include("includes/upload_adopt.inc.php");
                 <div class="row mx-2">
                   <?php foreach($row["image_dog"] as $subkey => $subvalue){ ?>
                   <div class="col-2 my-2">
-                    <img class="gallery_image" id="myImg<?php echo $row["dog_id"]; ?>" onClick="reply_click(this.id)" width="100%" height="90" style="object-fit: cover;" src="<?php echo $subkey; ?>" alt="">
+                    <img class="gallery_image" id="myImg<?php echo $i; ?>" onClick="reply_click(this.id)" width="100%" height="90" style="object-fit: cover;" src="../image_upload/<?php echo $subkey; ?>" alt="">
                   </div>
-                <?php }; ?>
+                <?php $i++;}; ?>
                 </div>
             </div>
               <div class="modal-footer">
@@ -179,34 +180,34 @@ include("includes/upload_adopt.inc.php");
                 </div>
       <?php }; ?>
  
-			 		</div> 
-			</div><!--inside row ends-->
-		</div><!--col-10 ends-->
-	</div>
-		<div id="mypicture" class="picture">
-			<span id="sca" class="close">ix &times;</span>
-			<img class="picture-content" src="#">
-		<div id="caption"></div>	<!--row ends-->	
-</div><!--container ends-->	
+          </div> 
+      </div><!--inside row ends-->
+    </div><!--col-10 ends-->
+  </div>
+    <div id="mypicture" class="picture">
+      <span id="sca" class="close">ix &times;</span>
+      <img class="picture-content" src="#">
+    <div id="caption"></div>  <!--row ends--> 
+</div><!--container ends--> 
 <script>
 // Get thepicture
 var picBlock = document.getElementById("mypicture");
 var bigPic = document.getElementsByClassName('picture-content');
 function reply_click(x){
-	var pictureSrc = $('#'+x).attr('src');
-	console.log(pictureSrc);
-	//var bigPic = $('#img01');
-	bigPic[0].src = pictureSrc;
+  var pictureSrc = $('#'+x).attr('src');
+  console.log(pictureSrc);
+  //var bigPic = $('#img01');
+  bigPic[0].src = pictureSrc;
 
-	
-	picBlock.style.display='block';
+  
+  picBlock.style.display='block';
 
 }
 
 
 $("#sca").click(function(){
     picBlock.style.display = "none";
-   	bigPic[0].src = ""; 
+    bigPic[0].src = ""; 
 
 });
 </script>
