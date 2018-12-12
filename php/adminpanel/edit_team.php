@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/users.css">
 </head>
 <body>
-	<?php include_once "includes_admin/navbar.inc.php"; ?>
+	<?php include "includes_admin/navbar.inc.php"; ?>
 	<div class="content">
 		<?php 
 	include_once "includes_admin/dbh.inc.php";

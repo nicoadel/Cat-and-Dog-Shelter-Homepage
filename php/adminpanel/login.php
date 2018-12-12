@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/login.css">
 
 <body>
-<?php include_once "includes_admin/navbar.inc.php"; ?>
+<?php include "includes_admin/navbar.inc.php"; ?>
 <main class="login_main upload_form">
 	<div class="wrapper-main">
 		<section class="section-default">

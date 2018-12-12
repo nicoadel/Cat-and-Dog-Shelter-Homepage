@@ -1,0 +1,10 @@
+.dropdown a{
+	text-decoration: none;
+	width: auto;
+	display: flex;
+	justify-content: center;
+	color: black;
+}
+.dropdown a:hover{
+	color: grey;
+}

@@ -6,7 +6,9 @@ height: 250px !important;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin: auto;
   margin-top: 100px;
+  width: 50%;
 }
 .img-large{
   max-width:100%;

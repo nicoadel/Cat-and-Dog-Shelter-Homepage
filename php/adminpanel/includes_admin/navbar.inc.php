@@ -1,17 +1,11 @@
- <style>
-   a:hover , h4:hover { 
-  background-color:lightblue;
-  border-radius: 10px;
-  transition: 1s;
-
-}
- </style>
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css/navbar.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Adminpanel</a>
+  <a class="navbar-brand" href="admin_landing_page.php">Adminpanel</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,47 +18,97 @@
   if (isset($_SESSION['userUid']))
                       {
  ?>
-      <li class="nav-item dropdown">
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dashboard/Mainpage
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="admin_landing_page.php">Dashboard</a>
-
         <a class="nav-link" href="../landing.php">Main Page</a>
-      </li>
-      <li class="nav-item dropdown">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cats
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="upload_cat.php">Upload Cat</a>
         <a class="nav-link" href="edit_cats.php">Edit Cats</a>
-      </li>
-      <li class="nav-item dropdown">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dogs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="upload_dog.php">Upload Dog</a>
         <a class="nav-link" href="edit_dogs.php">Edit Dogs</a>
-      </li>
-      <li class="nav-item dropdown">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Team
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="upload_team.php">Upload Team</a>
         <a class="nav-link" href="edit_team.php">Edit Team</a>
-      </li>
-      <li class="nav-item dropdown">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sponsors
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="upload_sponsors.php">Upload Sponsors</a>
         <a class="nav-link" href="edit_sponsors.php">Edit Sponsors</a>
-      </li>
-      <li class="nav-item dropdown">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Reports
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="upload_report.php">Upload Reports</a>
         <a class="nav-link" href="edit_report.php">Edit Reports</a>
-      </li>
-      <li class="nav-item">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Shelter
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="upload_shelter.php">Upload Shelter</a>
         <a class="nav-link" href="edit_shelter.php">Edit Shelter</a>
-      </li>
-      <li class="nav-item">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Users
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="upload_users.php">Upload Users</a>
         <a class="nav-link" href="edit_users.php">Edit Users</a>
-      </li>
-      <li class="nav-item">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         List Supporters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="list_supporter.php">List Supporters</a>
         <a class="nav-link" href="list_adopter.php">List Adopters</a>
-      </li>
-      <li class="nav-item">
+        </div>
+      </div>
+      <div class="dropdown show">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Verify Supporters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="nav-link" href="verify_supporter.php">Verify Supporters</a>
         <a class="nav-link" href="verify_adopter.php">Verify Adopters</a>
-      </li>
+        </div>
+      </div>
+
 
       <?php }
       else{ ?>

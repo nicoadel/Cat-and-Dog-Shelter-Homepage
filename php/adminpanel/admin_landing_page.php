@@ -1,22 +1,11 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../../css/admin_landing_page.css">
-	<style>
-		h3{
-			text-align: center;
-		}
-		h3:hover{
-			background-color: #28A745;
-			transition: 1s;
-			border-radius: 10px;
-		}
-	</style>
 </head>
 <body>
-	<?php include_once "includes_admin/navbar.inc.php"; ?>
+	<?php include "includes_admin/navbar.inc.php"; ?>
 	<?php
 	if (isset($_SESSION['userUid']))
                       {

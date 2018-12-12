@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/users.css">
 </head>
 <body>
-  <?php include_once "includes_admin/navbar.inc.php"; ?>
+  <?php include "includes_admin/navbar.inc.php"; ?>
   <div class="content">
     <?php 
   include_once "includes_admin/dbh.inc.php";
@@ -124,14 +124,6 @@
         <button class="btn btn-center" type="submit" name="update">update</button>
       </form>
     </div>
-<?php
-  if (isset($_SESSION['message']))
-  {
-  display_message($_SESSION['message']);
-  }
-   ?>
-  
-  
   </div>
 </body>
 </html>
