@@ -57,6 +57,14 @@
         <a class="nav-link" href="upload_users.php">Upload Users</a>
         <a class="nav-link" href="edit_users.php">Edit Users</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="list_supporter.php">List Supporters</a>
+        <a class="nav-link" href="list_adopter.php">List Adopters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="verify_supporter.php">Verify Supporters</a>
+        <a class="nav-link" href="verify_adopter.php">Verify Adopters</a>
+      </li>
 
       <?php }
       else{ ?>
