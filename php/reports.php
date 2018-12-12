@@ -3,8 +3,10 @@ include("includes/dbh.inc.php");
 include("includes/navbar.inc.php");
 include("includes/output_reports.inc.php");
  ?>
-
-
+<link rel="stylesheet" type="text/css" href="../css/reports.css">
+<div class="break">
+    
+</div>
 
 <h1 style="text-align: center;">REPORTS</h1>
 <div class="container">
@@ -14,19 +16,18 @@ $i=1;
  	if($i%2==0){ ?>
 
 <div class="row">
-    	<div class="card col-md-12 p-3">
+    	<div class="card col-md-12 p-3 mb-4">
     		<div class="row ">
     			<div class="col-md-4">
-    				<img class="w-100" src="<?php echo $row['reports_image'] ?>">
+    				<img class="w-100 imag" src="<?php echo $row['reports_image'] ?>">
     			</div>
     			<div class="col-md-8">
     				<div class="card-block">
     					<h6 class="card-title"><?php echo $row['name'] ?></h6>
-    					<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    				<div>
-         <a href='update_reports.php?id=".$key['place_id']."'><button type='button' class='btn btn-outline-success'>Edit</button></a>
-         <a href='delete_reports.php?id=".$key['place_id']."'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
-         </div>
+    					<p class="card-text text-justify text str"><?php echo $row['reports_descriptions'] ?></p>
+                        <form id="single" action='report.php' method='get' >
+                        <button class="btn btn-info" type="submit" name='id' value="<?php echo $row['reports_id'] ?>">Read more..</button>  
+          </form> 
     				</div>
     			</div>
     		</div>
@@ -35,20 +36,19 @@ $i=1;
  <?php
 }else{ ?>
 	<div class="row">
-    	<div class="card col-md-12 p-3">
+    	<div class="card col-md-12 p-3 mb-4">
     		<div class="row">
-    			<div class="col-md-8">
+    			<div class="col-md-8 mb-3">
     				<div class="card-block">
     					<h6 class="card-title"><?php echo $row['name'] ?></h6>
-    					<p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    				<div>
-         <a href='update_reports.php?id=".$key['reports_id']."'><button type='button' class='btn btn-outline-success'>Edit</button></a>
-         <a href='delete_reports.php?id=".$key['reports_id']."'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
-         </div>
+    					<p class="card-text text-justify text str"><?php echo $row['reports_descriptions'] ?></p>
+                        <form id="single" action='report.php' method='get' >
+                        <button class="btn btn-info" type="submit" name='id' value="<?php echo $row['reports_id'] ?>">Read more..</button>  
+          </form>
     				</div>
     			</div>
     			<div class="col-md-4">
-    				<img class="w-100" src="<?php echo $row['reports_image'] ?>">
+    				<img class="w-100 imag" src="<?php echo $row['reports_image'] ?>">
     			</div>
     		</div>
     	</div>
@@ -57,7 +57,19 @@ $i=1;
 }
 $i++; }; 
 ?>
+<script>
+    var string = $('.str').text();
+var str50 = string.substr(0,300) 
+$('.str').html(str50+'...<br>');
+$('.str').attr('data-text',string);
 
+$('.readmore').click(function(e)
+{
+    e.preventDefault();
+    $(this).parent().html($(this).parent().attr('data-text'))
+
+})
+</script>
 
 </div>
 <?php

@@ -19,7 +19,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">  <img class="logo" src="../img/logo.png" alt="l" width="50">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="landing.php"> 
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> 
 Útulok Piešťany</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -35,12 +35,12 @@
               <a class="dropdown-item" href="ourmission.php">Our Mission</a>
               <a class="dropdown-item" href="team_page.php">Our Team</a>
               <a class="dropdown-item" href="sponsors.php">Sponsors</a>
-              <a class="dropdown-item" href="./gallary.php">Gallery</a>
+              <a class="dropdown-item" href="gallery.php">Gallery</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dog & Cats
+              Dogs & Cats
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="dogs.php">Dogs</a>
@@ -56,7 +56,7 @@
             <a class="nav-link js-scroll-trigger" href="reports.php">Reports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#about">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
