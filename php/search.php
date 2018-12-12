@@ -7,15 +7,17 @@ include("includes/output_search.inc.php");
 <div class="break">
     
 </div>
-
-<h1 style="text-align: center;">Search</h1>
 <div class="container">
+      <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 font-weight-bold">Search for a specified pet?</h1>
+        </div>
+      </div>
 <div class="row">
-	<div class="col-12">
-		<form class="" action="search_result.php" method="GET">
-      
+  <div class="col-12">
+    <form class="" action="search_result.php" method="GET">
         <div class="form-group">
-          <label >Select animal</label>
+          <label>Select type of pet</label>
           <select name="animal" class="form-control" id="exampleFormControlSelect1">
             <option value="dog">dog</option>
             <option value="cat">cat</option>
@@ -28,7 +30,7 @@ include("includes/output_search.inc.php");
             <option value="female">female</option>
           </select>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-4">
           <label >Select Age</label>
           <select name="date" class="form-control" id="exampleFormControlSelect1">
             <option value="2018-01-01">< 1 </option>
@@ -44,9 +46,12 @@ include("includes/output_search.inc.php");
             <option value="1999-01-01">< 20 </option>
           </select>
         </div>
-        <input class="btn btn-primary" type="submit" value="Search" name="search" />
+        <input class="mt-4 btn btn-primary btn-block" type="submit" value="Search" name="search" />
       </form>
-	</div>
+  </div>
+</div>
+<div class="break">
+    
 </div>
 </div>
 <?php
