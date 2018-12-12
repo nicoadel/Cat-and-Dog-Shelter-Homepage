@@ -16,8 +16,11 @@ if(isset($_POST['upload_dog_table'])) {
   ";
   if (mysqli_query($conn, $sql)) {
    echo "<h2 class='mt-4'>Successfully uploaded</h2>";
-   header("Location: ../image_upload.php");
+   header("Location: ../image_upload_dog.php");
  } else {
    echo "Record creation error for: " . $sql . "\n" . mysqli_error($conn);
  }
+
 }
+
+ ?>
