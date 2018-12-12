@@ -13,7 +13,7 @@ foreach ($newarray as $key) {
   print("<div id='main' class='container  mt-4 pt-4'><div class='row'><div class='col-lg-6 col-md-12 col-sm-12 col-xs-12 mb-5 pl-7'><img src='".$key['place_image']."'class='img-thumbnail' id='img' alt='Cinque Terre' width='400' height='300'>	<div>
          <a href='update_place.php?id=".$key['place_id']."'><button type='button' class='btn btn-outline-success'>Edit</button></a>
          <a href='delete_place.php?id=".$key['place_id']."'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
-         </div></div><div class='col-lg-6 col-md-12 col-sm-12 col-xs-12 mb-5 pl-7'><img src='".$key['place_image']."'class='img-thumbnail' id='img' alt='Cinque Terre' width='400' height='300'>
+         </div></div><div class='col-lg-6 col-md-12 col-sm-12 col-xs-12 mb-5 pl-7'><img src='".$key['animal_image']."'class='img-thumbnail' id='img' alt='Cinque Terre' width='400' height='300'>
   	<div>
          <a href='update_place.php?id=".$key['place_id']."'><button type='button' class='btn btn-outline-success'>Edit</button></a>
          <a href='delete_place.php?id=".$key['place_id']."'><button type='button' class='btn btn-outline-danger'>Delete</button></a>
