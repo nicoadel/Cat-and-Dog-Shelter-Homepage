@@ -1,6 +1,7 @@
 <?php 
 
-$sql1 = "SELECT *FROM cat JOIN main_image_cat ON cat.cat_id = main_image_cat.fk_cat_id JOIN image_cat ON cat.cat_id = image_cat.fk_cat_id";
+$sql1 = "SELECT * FROM cat LEFT JOIN main_image_cat ON cat.cat_id = main_image_cat.fk_cat_id LEFT JOIN image_cat ON cat.cat_id = image_cat.fk_cat_id LEFT JOIN adaption ON cat.cat_id = adaption.fk_cat_id
+	WHERE adaption.fk_cat_id IS NULL ORDER BY cat_name";
 
 $result=mysqli_query($conn, $sql1);
 $data = array();
@@ -20,7 +21,6 @@ while($row = mysqli_fetch_array($result)){
 };
 
  ?>
-
 
 
 

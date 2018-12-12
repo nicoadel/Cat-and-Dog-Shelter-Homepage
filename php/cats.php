@@ -23,13 +23,17 @@ include("includes/output_cat.inc.php");
 						<div class="buttons_div">
 							<button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php
 								foreach($row["cat_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};
-							 ?>">More..</button>
-							<button class="btn btn-success btn-block mb-2 buttons"  type="button" data-toggle="modal" data-target="#supportModal<?php echo $row["cat_id"]; ?>">Support</button>
-                            <button class="btn btn-success btn-block buttons" type="button" data-toggle="modal" data-target="#adoptModal<?php echo $row["cat_id"]; ?>">Adopt</button>
+							 echo $subkey;};?>">More..</button>
+							<button class="btn btn-success btn-block mb-2 buttons"  type="button" data-toggle="modal" data-target="#supportModal<?php
+								foreach($row["cat_id"] as $subkey => $subvalue){ 
+							 echo $subkey;};?>">Support</button>
+							<button class="btn btn-success btn-block buttons" type="button" data-toggle="modal" data-target="#adoptModal<?php
+								foreach($row["cat_id"] as $subkey => $subvalue){ 
+							 echo $subkey;};?>">Adopt</button>
 						</div>
 					</div>
 				</div>
+				<!----MoreMOdal--->
 				<div class="modal fade" id="moreModal<?php foreach($row["cat_id"] as $subkey => $subvalue){ 
 							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="moreModalLabel" aria-hidden="true">
 				  <div class="modal-dialog  modal-lg" role="document">
@@ -64,7 +68,121 @@ include("includes/output_cat.inc.php");
 				    </div>
 				  </div>
 				</div>
-				
+				 <!--Support Modal-->
+                <div class="modal fade" id="supportModal<?php foreach($row["cat_id"] as $subkey => $subvalue){ 
+							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="supportModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="supportModalLabel">Support <?php echo $row["cat_name"]; ?></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Full Name</label>
+                            <input type="text" class="form-control" id="support_name" placeholder="Your Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="support_email" placeholder="name@example.com">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">ZIP</label>
+                            <input type="number" class="form-control" id="support_zip" placeholder="ZIP of city">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">City</label>
+                            <input type="text" class="form-control" id="support_city" placeholder="City">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Street</label>
+                            <input type="text" class="form-control" id="support_sreet" placeholder="Street 23">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Phone Number</label>
+                            <input type="text" class="form-control" id="support_tel" placeholder="01 234 567">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Support</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Adopt Modal-->
+                <div class="modal fade" id="adoptModal<?php foreach($row["cat_id"] as $subkey => $subvalue){ 
+							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="adoptModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="adoptModalLabel">Adopt <?php echo $row["cat_name"]; ?></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Full Name</label>
+                            <input type="text" class="form-control" id="support_name" placeholder="Your Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Kind of keeping</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Inside</option>
+                              <option>Inside + Outside</option>
+                              <option>Outside</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Replacement</label>
+                            <input type="text" class="form-control" id="support_city" placeholder=" ">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Other pets in the household</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Yes</option>
+                              <option>No</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Other pets in the household</label>
+                            <input type="text" class="form-control" id="support_city" placeholder="2 friendly dogs">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Caption</label>
+                            <input type="text" class="form-control" id="support_city" placeholder=" ">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="support_email" placeholder="name@example.com">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Address</label>
+                            <input type="text" class="form-control" id="support_city" placeholder="1234 City Street 12">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Phone Number 1</label>
+                            <input type="text" class="form-control" id="support_tel" placeholder="01 234 567">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Phone Number 2 (optional)</label>
+                            <input type="text" class="form-control" id="support_tel" placeholder="01 234 567">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Adopt</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 			<?php }; ?>
 				
 			</div><!--inside row ends-->
@@ -92,25 +210,6 @@ function reply_click(x){
 }
 
 
-
-/*function reply_click(clicked_id){
-	var img = $('#'+clicked_id).attr('src');
-	console.log("CSákü maákó: "+clicked_id);
-	var pictureImg = document.getElementById("img01");
-	var captionText = document.getElementById("caption");
-
-   picture.style.display = "block";
-   pictureImg.src = img;
-    
-}
-
-
-// Get the image and insert it inside thepicture - use its "alt" text as a caption
-;
-
-// Get the <span> element that closes thepicture
-
-// When the user clicks on <span> (x), close thepicture*/
 $("#sca").click(function(){
     picBlock.style.display = "none";
    	bigPic[0].src = ""; 
