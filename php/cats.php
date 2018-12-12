@@ -13,7 +13,6 @@ include("includes/output_cat.inc.php");
 		
 			<hr>
 		</div>
-		   
 		<div class="col-10 offset-1">
 			<div class="row">
 				<?php foreach($data as $row){  ?>
@@ -185,7 +184,7 @@ include("includes/output_cat.inc.php");
                   </div>
                 </div>
 			<?php }; ?>
-
+				
 			</div><!--inside row ends-->
 		</div><!--col-10 ends-->
 	</div>
