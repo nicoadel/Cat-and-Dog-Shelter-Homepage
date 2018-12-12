@@ -15,21 +15,21 @@ include("includes/output_search.inc.php");
 		<form class="" action="search_result.php" method="GET">
       
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Select animal</label>
+          <label >Select animal</label>
           <select name="animal" class="form-control" id="exampleFormControlSelect1">
             <option value="dog">dog</option>
             <option value="cat">cat</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Select gender</label>
+          <label >Select gender</label>
           <select name="gender" class="form-control" id="exampleFormControlSelect1">
             <option value="male">male</option>
             <option value="female">female</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Select Age</label>
+          <label >Select Age</label>
           <select name="date" class="form-control" id="exampleFormControlSelect1">
             <option value="2018-01-01">< 1 </option>
             <option value="2017-01-01">< 2 </option>

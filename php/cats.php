@@ -3,6 +3,7 @@ include("includes/dbh.inc.php");
 include("includes/navbar.inc.php"); 
 include("includes/output_cat.inc.php");
 include("includes/upload_support.inc.php");
+include("includes/upload_adopt.inc.php");
 ?>
 <link rel="stylesheet" type="text/css" href="../css/dogs_cats.css">
 <div class="break">
@@ -74,14 +75,12 @@ include("includes/upload_support.inc.php");
                         </button>
                       </div>
                       <div class="modal-body">
-                        <form>
+                        <form  method="post" >
                           <div class="form-group">
-                            <label>Cat Name <?php echo $row["cat_name"]; ?></label>
-                            <input type="text" class="form-control" name="cat_id" value="<?php echo $row["cat_id"];?>" placeholder="<?php echo $row["cat_name"]; ?>">
-                            <input type="hidden" name="id" value="<?php echo $row["cat_name"]; ?>">
+                            <input type="hidden" class="form-control" name="cat_id" value="<?php echo $row["cat_id"];?>" placeholder="<?php echo $row["cat_name"]; ?>">
                           </div>
                           <div class="form-group">
-                            <label>Full Name</label>
+                            <label>Your Full Name</label>
                             <input type="text" class="form-control" name="support_name" placeholder="Your Name">
                           </div>
                           <div class="form-group">
@@ -98,13 +97,13 @@ include("includes/upload_support.inc.php");
                           </div>
                           <div class="form-group">
                             <label>Street</label>
-                            <input type="text" class="form-control" name="support_sreet" placeholder="Street 23">
+                            <input type="text" class="form-control" name="support_street" placeholder="Street 23">
                           </div>
                           <div class="form-group">
                             <label>Phone Number</label>
                             <input type="text" class="form-control" name="support_tel" placeholder="01 234 567">
                           </div>
-                          <input class="btn btn-success" type="submit" value="Support" name="support" />
+                          <input class="btn btn-success" type="submit" value="Support" name="support_cat" />
                         </form>
                       </div>
                       <div class="modal-footer">
@@ -124,59 +123,54 @@ include("includes/upload_support.inc.php");
                         </button>
                       </div>
                       <div class="modal-body">
-                        <form>
+                        <form  method="post" >
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Full Name</label>
-                            <input type="text" class="form-control" id="support_name" placeholder="Your Name">
+                            <input type="hidden" class="form-control" name="cat_id" value="<?php echo $row["cat_id"];?>" placeholder="<?php echo $row["cat_name"]; ?>">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlSelect1">Kind of keeping</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                              <option>Inside</option>
-                              <option>Inside + Outside</option>
-                              <option>Outside</option>
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" name="adopt_name" placeholder="Your Name">
+                          </div>
+                          <div class="form-group">
+                            <label >Kind of keeping</label>
+                            <select name="kind" class="form-control">
+                              <option value="inside">Inside</option>
+                              <option value="inside & outside">Inside & Outside</option>
+                              <option value="outside">Outside</option>
                             </select>
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Replacement</label>
-                            <input type="text" class="form-control" id="support_city" placeholder=" ">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlSelect1">Other pets in the household</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                              <option>Yes</option>
-                              <option>No</option>
+                            <label >Other pets in the household</label>
+                            <select  name="other1" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
                             </select>
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Other pets in the household</label>
-                            <input type="text" class="form-control" id="support_city" placeholder="2 friendly dogs">
+                            <label >Other pets in the household</label>
+                            <input type="text" class="form-control" name="other2" placeholder="2 friendly cats">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Caption</label>
-                            <input type="text" class="form-control" id="support_city" placeholder=" ">
+                            <label >Email address</label>
+                            <input type="email" class="form-control" name="adopt_email" placeholder="name@example.com">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Email address</label>
-                            <input type="email" class="form-control" id="support_email" placeholder="name@example.com">
+                            <label >Address</label>
+                            <input type="text" class="form-control" name="adopt_address" placeholder="1234 City Street 12">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Address</label>
-                            <input type="text" class="form-control" id="support_city" placeholder="1234 City Street 12">
+                            <label >Phone Number 1</label>
+                            <input type="text" class="form-control" name="adopt_tel1" placeholder="01 234 567">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Phone Number 1</label>
-                            <input type="text" class="form-control" id="support_tel" placeholder="01 234 567">
+                            <label >Phone Number 2 (optional)</label>
+                            <input type="text" class="form-control" name="adopt_tel2" placeholder="01 234 567">
                           </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlInput1">Phone Number 2 (optional)</label>
-                            <input type="text" class="form-control" id="support_tel" placeholder="01 234 567">
-                          </div>
+                          <input class="btn btn-success" type="submit" value="Adopt" name="adopt_cat" />
                         </form>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Adopt</button>
                       </div>
                     </div>
                   </div>
