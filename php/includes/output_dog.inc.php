@@ -15,9 +15,8 @@ while($row = mysqli_fetch_array($result)){
 	$data[$row['dog_id']]['height'] = $row['height'];
 	$data[$row['dog_id']]['weight'] = $row['weight'];
 	$data[$row['dog_id']]['dog_desc'] = $row['dog_desc'];
-	$data[$row['dog_id']]['dog_id'][$row["image_dog_id"]] = array(
-		'first'=>$row["image_dog"],
-	);
+	$data[$row['dog_id']]['dog_id'] = $row['dog_id'];
+	$data[$row['dog_id']]['image_dog'][$row["image_dog"]] = array();
 };
 
  ?>
