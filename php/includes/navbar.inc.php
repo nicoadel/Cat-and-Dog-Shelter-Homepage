@@ -67,6 +67,13 @@
               <a class="dropdown-item" href="docs.php">Documents</a>
             </div>
           </li>
+          <li >
+              <form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="9NW8L34KBXKNG">
+              <input type="image" id="paypal_img" src="../img/PayPal.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            </form>
+          </li>
         </ul>
       </div>
     </div>
