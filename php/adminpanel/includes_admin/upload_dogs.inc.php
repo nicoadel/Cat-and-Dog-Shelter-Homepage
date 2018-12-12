@@ -20,7 +20,3 @@ if(isset($_POST['upload_dog_table'])) {
  } else {
    echo "Record creation error for: " . $sql . "\n" . mysqli_error($conn);
  }
-
-}
-
- ?>
