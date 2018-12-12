@@ -1,0 +1,24 @@
+.break {
+  height: 150px;
+}
+.backg1 {
+  background-image: url(../img/photo-1444212477490-ca407925329e.jpg);
+  background-color: #17234E;
+    margin-bottom: 0;`enter code here`
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.backg2 {
+  background-image: url(../img/photo-1484244233201-29892afe6a2c.jpg);
+  background-color: #17234E;
+    margin-bottom: 0;`enter code here`
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
