@@ -41,8 +41,12 @@
         <a class="nav-link" href="edit_report.php">Edit Reports</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="upload_shelter.php">Upload Shelter</a>
+        <a class="nav-link" href="edit_shelter.php">Edit Shelter</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="upload_users.php">Upload Users</a>
-        <a class="nav-link" href="users.php">Users</a>
+        <a class="nav-link" href="edit_users.php">Edit Users</a>
       </li>
 
       <?php }
