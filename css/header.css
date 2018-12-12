@@ -91,15 +91,15 @@ section h3.section-subheading {
 }
 
 img::-moz-selection {
-  background: transparent;
+  background: white;
 }
 
 img::selection {
-  background: transparent;
+  background: white;
 }
 
 img::-moz-selection {
-  background: transparent;
+  background: white;
 }
 
 #mainNav {
@@ -148,7 +148,7 @@ img::-moz-selection {
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+    background-color: white;
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
