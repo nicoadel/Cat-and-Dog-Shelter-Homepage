@@ -83,13 +83,7 @@
 				<button class="btn btn-center" type="submit" name="update">update</button>
 			</form>
 		</div>
-<?php
-	if (isset($_SESSION['message']))
-	{
-	display_message($_SESSION['message']);
-	}
-	 ?>
-	
+
 	
 	</div>
 </body>
