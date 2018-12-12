@@ -49,7 +49,7 @@
               <a class="dropdown-item" href="adopt.php">Adopt</a>
               <a class="dropdown-item" href="support.php">Support</a>
               <a class="dropdown-item" href="adopted.php">in Happy Home</a>
-              <a class="dropdown-item" href="memoriam.php">In Memoriam</a>
+              <a class="dropdown-item" href="in_memoriam.php">In Memoriam</a>
             </div>
           </li>
           <li class="nav-item">

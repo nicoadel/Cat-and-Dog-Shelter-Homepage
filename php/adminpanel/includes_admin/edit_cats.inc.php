@@ -35,6 +35,8 @@ if (isset($_POST['update'])) {
 if (isset($_GET['del'])) {
     $id = $_GET['del'];
     mysqli_query($conn, "DELETE FROM cat WHERE cat_id=$id");
+    mysqli_query($conn, "DELETE FROM image_cat WHERE fk_cat_id=$id");
+    mysqli_query($conn, "DELETE FROM main_image_cat WHERE fk_cat_id=$id");
     $_SESSION['message'] = "Shelter deleted!"; 
     header('location: edit_cats.php');
 }

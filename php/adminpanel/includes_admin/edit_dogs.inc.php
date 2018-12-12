@@ -35,6 +35,8 @@ if (isset($_POST['update'])) {
 if (isset($_GET['del'])) {
     $id = $_GET['del'];
     mysqli_query($conn, "DELETE FROM dog WHERE dog_id=$id");
+    mysqli_query($conn, "DELETE FROM image_dog WHERE fk_dog_id=$id");
+    mysqli_query($conn, "DELETE FROM main_image_dog WHERE fk_dog_id=$id");
     $_SESSION['message'] = "Shelter deleted!"; 
     header('location: edit_dogs.php');
 }
