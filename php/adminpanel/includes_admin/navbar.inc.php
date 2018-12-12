@@ -1,3 +1,11 @@
+ <style>
+   a:hover , h4:hover { 
+  background-color:lightblue;
+  border-radius: 10px;
+  transition: 1s;
+
+}
+ </style>
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,6 +26,7 @@
  ?>
       <li class="nav-item dropdown">
         <a class="nav-link" href="admin_landing_page.php">Dashboard</a>
+
         <a class="nav-link" href="../landing.php">Main Page</a>
       </li>
       <li class="nav-item dropdown">
