@@ -39,9 +39,18 @@
       
     <table class="table bordered">
   <thead>
-    <tr>
-      <th>Place Image</th>
-      <th>Animal Place Image</th>
+   <tr>
+      <th>Name</th>
+      <th>Post Date</th>
+      <th>Born date</th>
+      <th>Castration</th>
+      <th>Dog User id</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Gender</th>
+      <th>1 =  in shelter 2 = dead</th>
     </tr>
   </thead>
   

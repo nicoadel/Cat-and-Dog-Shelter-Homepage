@@ -11,7 +11,7 @@ $result = mysqli_query($conn,$sql);
 $newarray = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 
-<div id='main' class='containerr'>
+<div id='main' class='containerr pb-5 pt-5'>
 
 <?php foreach ($newarray as $key) { ?>
 

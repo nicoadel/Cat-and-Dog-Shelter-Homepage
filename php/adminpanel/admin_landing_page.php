@@ -14,12 +14,12 @@
  <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col"><h3>Upload pages</h3></th>
-      <th scope="col"><h3>Edit pages</h3></th>
+      <th class="text-center"><h1>Upload pages</h1></th>
+      <th class="text-center"><h1>Edit pages</h1></th>
     </tr>
   </thead>
   <tbody>
-  	    <tr>
+  	 <tr>
       <td><a href="upload_users.php"><h4>Upload User</h4></a></td>
       <td><a href="edit_users.php"><h4>Edit User</h4></a></td>
     </tr>
@@ -43,13 +43,18 @@
       <td><a href="upload_report.php"><h4>Upload reports</h4></a></td>
       <td><a href="edit_report.php"><h4>Edit reports</h4></a></td>
     </tr>
-          <tr>
+    <tr>
       <td><a href="upload_shelter.php"><h4>Upload Shelter</h4></a></td>
       <td><a href="edit_Shelter.php"><h4>Edit Shelter</h4></a></td>
     </tr>
   </tbody>
 </table>
-
+<div class="text-center">
+  <a href="list_supporters.php"><h5>Supporters</h5></a>
+   <a href="list_adopters.php"><h5>Adopters</h5></a>
+   <a href="verify_supporter.php"><h5>Verify Supporters</h5></a>
+   <a href="verify_adopter.php"><h5>Verify Adopters</h5></a>
+</div>
 </body>
 </html>
 

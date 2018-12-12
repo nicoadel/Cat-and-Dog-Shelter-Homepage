@@ -1,9 +1,9 @@
 .dropdown a{
 	text-decoration: none;
 	width: auto;
-	display: flex;
-	justify-content: center;
 	color: black;
+	list-style: none;
+	padding: 5px;
 }
 .dropdown a:hover{
 	color: grey;

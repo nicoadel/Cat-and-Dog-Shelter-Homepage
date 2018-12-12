@@ -19,7 +19,7 @@
                       {
  ?>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dashboard/Mainpage
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Cats
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dogs
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Team
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sponsors
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Reports
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Shelter
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Users
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -91,16 +91,16 @@
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         List Supporters
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Supporters/Adopters
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="nav-link" href="list_supporter.php">List Supporters</a>
-        <a class="nav-link" href="list_adopter.php">List Adopters</a>
+        <a class="nav-link" href="list_supporters.php">List Supporters</a>
+        <a class="nav-link" href="list_adopters.php">List Adopters</a>
         </div>
       </div>
       <div class="dropdown show">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Verify Supporters
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
