@@ -132,7 +132,7 @@ if($_POST) {
                 </button>
                 </a>";
 
-        echo "<a href='../index.php'><button type='button' class='btn btn-warning m-1'>Home</button></a>";
+        echo "<a href='../admin_landing_page.php'><button type='button' class='btn btn-warning m-1'>Home</button></a>";
         echo'</div></body>
 
             </html>';
