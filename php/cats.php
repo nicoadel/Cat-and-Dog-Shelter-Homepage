@@ -2,6 +2,7 @@
 include("includes/dbh.inc.php");
 include("includes/navbar.inc.php"); 
 include("includes/output_cat.inc.php");
+include("includes/upload_support.inc.php");
 ?>
 <link rel="stylesheet" type="text/css" href="../css/dogs_cats.css">
 <div class="break">
@@ -10,32 +11,26 @@ include("includes/output_cat.inc.php");
 	<div class="row">
 		<div class="col-10 offset-1">
 			<h1>Cats</h1>
-		
 			<hr>
 		</div>
 		<div class="col-10 offset-1">
 			<div class="row">
 				<?php foreach($data as $row){  ?>
-
 				<div class="part_divs col-md-3 offset-md-1 col-sm-5 offset-sm-2 mb-4 mt-2">
 					<div class="small_parts">
 						<img class="imag" src="<?php echo $row["main_image"]; ?>" alt="">
 						<div class="buttons_div">
 							<button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php
-								foreach($row["cat_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>">More..</button>
+								echo $row["cat_id"];?>">More..</button>
 							<button class="btn btn-success btn-block mb-2 buttons"  type="button" data-toggle="modal" data-target="#supportModal<?php
-								foreach($row["cat_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>">Support</button>
+								echo $row["cat_id"];?>">Support</button>
 							<button class="btn btn-success btn-block buttons" type="button" data-toggle="modal" data-target="#adoptModal<?php
-								foreach($row["cat_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>">Adopt</button>
+								echo $row["cat_id"];?>">Adopt</button>
 						</div>
 					</div>
 				</div>
 				<!----MoreMOdal--->
-				<div class="modal fade" id="moreModal<?php foreach($row["cat_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="moreModalLabel" aria-hidden="true">
+				<div class="modal fade" id="moreModal<?php echo $row["cat_id"];?>" tabindex="-1" role="dialog" aria-labelledby="moreModalLabel" aria-hidden="true">
 				  <div class="modal-dialog  modal-lg" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -55,9 +50,9 @@ include("includes/output_cat.inc.php");
 				      </div>
 				      <div class="container">
 					      <div class="row mx-2">
-					      	<?php foreach($row["cat_id"] as $subkey => $subvalue){ ?>
+					      	<?php foreach($row["image_cat"] as $subkey => $subvalue){ ?>
 					      	<div class="col-2 my-2">
-					      		<img class="gallery_image" id="myImg<?php echo $subkey ?>" onClick="reply_click(this.id)" width="100%" height="90" style="object-fit: cover;" src="<?php echo $subvalue["first"]; ?>" alt="">
+					      		<img class="gallery_image" id="myImg<?php echo $row["cat_id"]; ?>" onClick="reply_click(this.id)" width="100%" height="90" style="object-fit: cover;" src="<?php echo $subkey; ?>" alt="">
 					      	</div>
 					      <?php }; ?>
 					      </div>
@@ -69,8 +64,7 @@ include("includes/output_cat.inc.php");
 				  </div>
 				</div>
 				 <!--Support Modal-->
-                <div class="modal fade" id="supportModal<?php foreach($row["cat_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="supportModalLabel" aria-hidden="true">
+                <div class="modal fade" id="supportModal<?php echo $row["cat_id"];?>" tabindex="-1" role="dialog" aria-labelledby="supportModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -82,41 +76,45 @@ include("includes/output_cat.inc.php");
                       <div class="modal-body">
                         <form>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Full Name</label>
-                            <input type="text" class="form-control" id="support_name" placeholder="Your Name">
+                            <label>Cat Name <?php echo $row["cat_name"]; ?></label>
+                            <input type="text" class="form-control" name="cat_id" value="<?php echo $row["cat_id"];?>" placeholder="<?php echo $row["cat_name"]; ?>">
+                            <input type="hidden" name="id" value="<?php echo $row["cat_name"]; ?>">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Email address</label>
-                            <input type="email" class="form-control" id="support_email" placeholder="name@example.com">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" name="support_name" placeholder="Your Name">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">ZIP</label>
-                            <input type="number" class="form-control" id="support_zip" placeholder="ZIP of city">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" name="support_email" placeholder="name@example.com">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">City</label>
-                            <input type="text" class="form-control" id="support_city" placeholder="City">
+                            <label>ZIP</label>
+                            <input type="number" class="form-control" name="support_zip" placeholder="ZIP of city">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Street</label>
-                            <input type="text" class="form-control" id="support_sreet" placeholder="Street 23">
+                            <label>City</label>
+                            <input type="text" class="form-control" name="support_city" placeholder="City">
                           </div>
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">Phone Number</label>
-                            <input type="text" class="form-control" id="support_tel" placeholder="01 234 567">
+                            <label>Street</label>
+                            <input type="text" class="form-control" name="support_sreet" placeholder="Street 23">
                           </div>
+                          <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" class="form-control" name="support_tel" placeholder="01 234 567">
+                          </div>
+                          <input class="btn btn-success" type="submit" value="Support" name="support" />
                         </form>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Support</button>
                       </div>
                     </div>
                   </div>
                 </div>
                 <!--Adopt Modal-->
-                <div class="modal fade" id="adoptModal<?php foreach($row["cat_id"] as $subkey => $subvalue){ 
-							 echo $subkey;};?>" tabindex="-1" role="dialog" aria-labelledby="adoptModalLabel" aria-hidden="true">
+                <div class="modal fade" id="adoptModal<?php echo $row["cat_id"];?>" tabindex="-1" role="dialog" aria-labelledby="adoptModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
