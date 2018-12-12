@@ -1,165 +1,147 @@
-<?php
-
- ob_start();
-session_start();
-
- 
-
-require_once 'includes_admin/dbh.inc.php';
-
- 
-
-if($_GET['cat_id']) {
-
-    $cat_id = $_GET['cat_id'];
-
- 
-
-    $sql = "SELECT * FROM cat WHERE cat_id = {$cat_id}";
-
-    $result = $connect->query($sql);
-
- 
-
-    $data = $result->fetch_assoc();
-
- 
-
-    $connect->close();
-
- 
-
-?>
-
- 
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-    <title>Edit User</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+  <title></title>
+    <link rel="stylesheet" type="text/css" href="../../css/users.css">
 </head>
-
 <body>
-  <div id="navBar">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-                <div class="container">
-                    
-                
-                <a class="navbar-brand text-warning" href="#">CodeReview 10</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExample04">
-                <ul class="navbar-nav mr-auto">
-                    <!-- <li class="nav-item active">
-                                  <a class="nav-link btn btn-outline-warning" href="#" data-toggle="modal" data-target="#exampleModalCenter4"> Add New Book <span class="sr-only">(current)</span></a>
-                                  
-                </li>
-                 -->
-                 
-                </ul>
-                <form class="form-inline my-2 my-md-0">
-          
-                </form>
-            </div>
-            </div>
-            </nav>
-        </div>
-<div class="container">
-  
-
-    <form action="includes_admin/upload_cats.inc.php"  method="post" class="my-2">
-              <div class="form-group">
-                <label for="exampleInputEmail1">cat user id :</label>
-                <input type="text"
-                class="form-control"
-                name="cat_user_id"
-                placeholder="cat user id"
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">cat name:</label>
-                <input type="text"
-                class="form-control"
-                name="cat_name"
-                placeholder=" cat name"
-                >
-              </div>
-
-   <div class="form-group">
-                <label for="exampleInputEmail1">born date:</label>
-                <input type="date"
-                class="form-control"
-                name="born_date"
-                placeholder="born date"
-                >
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">height:</label>
-                <input type="text"
-                class="form-control"
-                name="height"
-                placeholder="height"
-                >
-              </div>
-
-                <div class="form-group">
-                <label for="exampleInputEmail1">weight:</label>
-                <input type="text"
-                class="form-control"
-                name="weight"
-                placeholder="weight"
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">castration:</label>
-                <select class="custom-select" name="castration">
-                <option selected>Choose...</option>
-                <option value="yes">yes</option>
-                <option value="no">no</option>
-              </select>
-              </div>
-
-               <div class="form-group">
-                <label for="exampleInputEmail1">image cat:</label>
-                <input type="text"
-                class="form-control"
-                name="image_cat"
-                placeholder="image_cat"
-                > </div>
-              <button type="hidden" class=" btn btn-warning" name="cat_id" value="<?php echo $data['cat_id']?>">
-                Save Changes
-              </button>
-              <a href="index.php"><button type="button" class=" btn btn-warning">Back</button>
-            </form> 
-
- </div>
-
-
-
- 
-
-</body>
-
-</html>
-
- 
-
-<?php
-
-}
-ob_end_flush(); 
+  <?php include_once "includes_admin/navbar.inc.php"; ?>
+  <div class="content">
+    <?php 
+  include_once "includes_admin/dbh.inc.php";
+  include_once "includes_admin/edit_cats.inc.php";
+    if (isset($_SESSION['userUid']))
+                        {
+  if (isset($_GET['edit'])) {
+    $id = $_GET['edit'];
+    $record = mysqli_query($conn, "SELECT * FROM cat WHERE cat_id=$id");
+    if (@count($record) == 1 ) {
+      $n = mysqli_fetch_array($record);
+      $cat_name = $n['cat_name'];
+      $post_date = $n['post_date'];
+      $born_date = $n['born_date'];
+      $castration = $n['castration'];
+      $cat_user_id = $n['cat_user_id'];
+      $height = $n['height'];
+      $weight = $n['weight'];
+      $cat_desc = $n['cat_desc'];
+      $type = $n['type'];
+      $gender = $n['gender'];
+      $in_memoriam = $n['in_memoriam'];
+    }
+  }
 ?>
-
+  <?php $results = mysqli_query($conn, "SELECT * FROM cat"); ?>
+  <div class="users_content">
+    <div class="card card_adminpanel">
+    <div class="card-body">
+      
+    <table class="table bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Post Date</th>
+      <th>Born date</th>
+      <th>Castration</th>
+      <th>Cat User id</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Gender</th>
+      <th>1 =  in shelter 2 = dead</th>
+    </tr>
+  </thead>
+  
+  <?php while ($row = mysqli_fetch_array($results)) { ?>
+    <tr>
+      <td><?php echo $row['cat_name']; ?></td>
+      <td><?php echo $row['post_date']; ?></td>
+      <td><?php echo $row['born_date']; ?></td>
+      <td><?php echo $row['castration']; ?></td>
+      <td><?php echo $row['cat_user_id']; ?></td>
+      <td><?php echo $row['height']; ?></td>
+      <td><?php echo $row['weight']; ?></td>
+      <td><?php echo $row['cat_desc']; ?></td>
+      <td><?php echo $row['type']; ?></td>
+      <td><?php echo $row['gender']; ?></td>
+      <td><?php echo $row['in_memoriam']; ?></td>
+      <?php 
+      echo '<td>
+        <a href="edit_cats.php?edit='. $row['cat_id']. '" class="btn btn-info" >Edit</a>
+      </td>
+      <td>
+        <a href="edit_cats.php?del='.$row['cat_id'].'" class="btn btn-danger">Delete</a>
+      </td>';
+      ?>
+      </tr>
+  <?php } ?>
+</table>
+</div>
+</div>
+  </div>
+  
+    <div class="inputform">
+      <form method="post" action="includes_admin/edit_cats.inc.php" >
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <div class="input-group form-group">
+          <label class="col">Cat Name: </label>
+          <input class="form-control " type="text" name="cat_name" value="<?php echo $cat_name; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">post_date: </label>
+          <input class="form-control " type="text" name="post_date" value="<?php echo $post_date; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">born_date: </label>
+          <input class="form-control " type="text" name="born_date" value="<?php echo $born_date; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">castration: </label>
+          <input class="form-control " type="text" name="castration" value="<?php echo $castration; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">cat_user_id: </label>
+          <input class="form-control " type="text" name="cat_user_id" value="<?php echo $cat_user_id; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">height: </label>
+          <input class="form-control " type="text" name="height" value="<?php echo $height; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">weight: </label>
+          <input class="form-control " type="text" name="weight" value="<?php echo $weight; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">cat_desc: </label>
+          <input class="form-control " type="text" name="cat_desc" value="<?php echo $cat_desc; ?>">
+        </div>
+        <div class="input-group form-group">
+          <label class="col">type: </label>
+          <input class="form-control " type="text" name="type" value="<?php echo $type; ?>">
+        </div>
+         <div class="input-group form-group">
+          <label class="col">gender: </label>
+          <input class="form-control " type="text" name="gender" value="<?php echo $gender; ?>">
+        </div>
+         <div class="input-group form-group">
+          <label class="col">in_memoriam: </label>
+           <input type="radio" name="in_memoriam" value="1" <?php  if ($in_memoriam == 1){?>checked <?php } ?>> In Shelter  <br>
+           <input type="radio" name="in_memoriam" value="2" <?php  if ($in_memoriam == 2){?>checked <?php } ?>> Dead<br>
+        </div>
+        <button class="btn btn-center" type="submit" name="update">update</button>
+      </form>
+    </div>
+<?php
+  if (isset($_SESSION['message']))
+  {
+  display_message($_SESSION['message']);
+  }
+   ?>
+  
+  
+  </div>
+</body>
+</html>
+<?php } ?>
