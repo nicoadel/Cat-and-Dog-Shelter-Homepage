@@ -168,4 +168,6 @@ img::-moz-selection {
     padding: 12px 0;
   }
 }
-
+#paypal_img{
+  width: 50px;
+}
