@@ -211,25 +211,6 @@ function reply_click(x){
 }
 
 
-
-/*function reply_click(clicked_id){
-	var img = $('#'+clicked_id).attr('src');
-	console.log("CSákü maákó: "+clicked_id);
-	var pictureImg = document.getElementById("img01");
-	var captionText = document.getElementById("caption");
-
-   picture.style.display = "block";
-   pictureImg.src = img;
-    
-}
-
-
-// Get the image and insert it inside thepicture - use its "alt" text as a caption
-;
-
-// Get the <span> element that closes thepicture
-
-// When the user clicks on <span> (x), close thepicture*/
 $("#sca").click(function(){
     picBlock.style.display = "none";
    	bigPic[0].src = ""; 

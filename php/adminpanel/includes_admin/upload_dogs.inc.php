@@ -11,6 +11,7 @@ if($_POST) {
     $castration =$_POST['castration'];
       $dog_desc =$_POST['dog_desc'];
   $type =$_POST['type'];
+    $gender =$_POST['gender'];
     $image_dog =$_POST['image_dog'];
 /*
     $adaption_name =$_POST['adaption_name'];
@@ -36,7 +37,8 @@ if($_POST) {
             weight,
             castration,
             dog_desc,
-            type
+            type,
+            gender
 
 
             ) VALUES (
@@ -47,7 +49,8 @@ if($_POST) {
             '$weight',
             '$castration',
             '$dog_desc',
-            '$type'
+            '$type',
+            '$gender'
            
             )";
 

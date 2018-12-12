@@ -12,6 +12,7 @@ if($_POST) {
       $cat_desc =$_POST['cat_desc'];
   $type =$_POST['type'];
     $image_cat =$_POST['image_cat'];
+     $gender =$_POST['gender'];
 /*
     $adaption_name =$_POST['adaption_name'];
     $adaption_kind =$_POST['adaption_kind'];
@@ -36,7 +37,8 @@ if($_POST) {
             weight,
             castration,
             cat_desc,
-            type
+            type,
+            gender
 
 
             ) VALUES (
@@ -47,7 +49,8 @@ if($_POST) {
             '$weight',
             '$castration',
             '$cat_desc',
-            '$type'
+            '$type',
+            '$gender'
            
             )";
 
@@ -89,7 +92,7 @@ if($_POST) {
        
             )";
             */
-    if($conn->query($sql) === TRUE) {
+    if($connect->query($sql) === TRUE) {
     echo'<html>
 
     <head>
@@ -105,12 +108,12 @@ if($_POST) {
 
     } else {
 
-        echo "Error " . $sql . ' ' . $conn->connect_error;
+        echo "Error " . $sql . ' ' . $connect->connect_error;
 
     }
 
 
-        if($conn->query($sql1) === TRUE) {
+        if($connect->query($sql1) === TRUE) {
     echo'<html>
 
     <head>
@@ -135,7 +138,7 @@ if($_POST) {
             </html>';
     } else {
 
-        echo "Error " . $sql1 . ' ' . $conn->connect_error;
+        echo "Error " . $sql1 . ' ' . $connect->connect_error;
 
     }
 /*
@@ -169,7 +172,7 @@ if($_POST) {
 
     }
 */
-    $conn->close();
+    $connect->close();
 
 }
 

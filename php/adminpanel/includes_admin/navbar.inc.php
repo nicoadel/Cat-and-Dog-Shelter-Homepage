@@ -16,33 +16,45 @@
   if (isset($_SESSION['userUid']))
                       {
  ?>
-      <li class="nav-item">
+      <li class="nav-item dropdown">
         <a class="nav-link" href="admin_landing_page.php">Dashboard</a>
+        <a class="nav-link" href="../landing.php">Main Page</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item dropdown">
         <a class="nav-link" href="upload_cat.php">Upload Cat</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="upload_dog.php">Upload Dog</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="edit_cats.php">Edit Cats</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="upload_dog.php">Upload Dog</a>
         <a class="nav-link" href="edit_dogs.php">Edit Dogs</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="users.php">Users</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="upload_team.php">Upload Team</a>
+        <a class="nav-link" href="edit_team.php">Edit Team</a>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="upload_sponsors.php">Upload Sponsors</a>
+        <a class="nav-link" href="edit_sponsors.php">Edit Sponsors</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="upload_report.php">Upload Reports</a>
+        <a class="nav-link" href="edit_report.php">Edit Reports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="upload_shelter.php">Upload Shelter</a>
+        <a class="nav-link" href="edit_shelter.php">Edit Shelter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="upload_users.php">Upload Users</a>
+        <a class="nav-link" href="edit_users.php">Edit Users</a>
+      </li>
+
       <?php }
       else{ ?>
       <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
       </li>
     <?php } ?>
-      <li class="nav-item">
-        <a class="nav-link" href="../landing.php">Main Page</a>
-      </li>
     </ul>
 
   </div>
