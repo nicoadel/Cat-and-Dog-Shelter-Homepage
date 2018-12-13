@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
 
 						move_uploaded_file($fileTempName, $fileDestination);
 
-						echo "<h2>SUCCESS</h2>";
+						echo "<h2 class='alert alert-success' role='alert'>SUCCESS</h2>";
 					}
 					}
 				}
@@ -74,7 +74,6 @@ if(isset($_POST['submit'])){
 		exit();
 	}
 
-	print_r($file);
 }
 
 

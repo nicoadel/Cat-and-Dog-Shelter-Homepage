@@ -18,7 +18,7 @@ include("includes/output_in_memoriam.inc.php");
 
 				<div class="part_divs col-md-3 offset-md-1 col-sm-5 offset-sm-2 mb-4 mt-2">
 					<div class="small_parts">
-						<img class="imag" src="<?php echo $row["main_image"]; ?>" alt="">
+						<img class="imag" src="../image_upload/<?php echo $row["main_image"]; ?>" alt="">
 						<div class="buttons_div">
 							<button class="btn btn-success mb-2 btn-block buttons"  type="button" data-toggle="modal" data-target="#moreModal<?php
 								foreach($row["dog_id"] as $subkey => $subvalue){ 

@@ -5,12 +5,15 @@ $sql1 = "SELECT * FROM dog
 		LEFT JOIN image_dog ON dog.dog_id = image_dog.fk_dog_id
 		 LEFT JOIN adaption ON dog.dog_id = adaption.fk_dog_id
 		 WHERE adaption.fk_dog_id = dog.dog_id
+		 AND adaption.verify = '1'
          UNION
 SELECT * FROM cat
 		 LEFT JOIN main_image_cat ON cat.cat_id = main_image_cat.fk_cat_id 
 		LEFT JOIN image_cat ON cat.cat_id = image_cat.fk_cat_id 
 		 LEFT JOIN adaption ON cat.cat_id = adaption.fk_cat_id
-		 WHERE adaption.fk_cat_id = cat.cat_id ORDER BY dog_name";
+		 WHERE adaption.fk_cat_id = cat.cat_id
+		 AND adaption.verify = '1'
+		 ORDER BY dog_name";
 
 $result=mysqli_query($conn, $sql1);
 $data = array();

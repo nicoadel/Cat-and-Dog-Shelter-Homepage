@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
 						move_uploaded_file($fileTempName, $fileDestination);
 
 						//header("Location: admin_landing_page.php?upload=success");
-						echo "<h1>SUCCESS</h1>";
+						echo "<h2 class='alert alert-success' role='alert'>SUCCESS</h2>";
 					}
 					}
 				}

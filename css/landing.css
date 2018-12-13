@@ -140,15 +140,31 @@ header.masthead .intro-text .intro-heading {
   animation: text 3s 1;
 
 }
+.nocolor, .imgtext { 
+  color: inherit!important; 
+  text-decoration: none!important;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+
+}
+.textt {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  padding-bottom: 10px;
+} 
 .mytext2{
   font-size: 30px;
   color: white;
   font-weight: bold;
   font-family: 'Gloria Hallelujah', cursive;
 }
+.landing_link {
+  padding: 5px;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+}
 @media only screen and (max-width: 800px) {
   .righttext h1 {
-    font-size: 40px;
+    font-size: 40px!important;
   }
   .donate {
   font-size: 20px!important;
@@ -162,9 +178,9 @@ header.masthead .intro-text .intro-heading {
 }
 @media only screen and (max-width: 565px) {
   .mytext1{
-    font-size: 40px;
+    font-size: 26px!important;
   }
-  .mytext {
+  .mytext2 {
     font-size: 20px;
   }
 }
@@ -184,4 +200,35 @@ header.masthead .intro-text .intro-heading {
     margin-bottom: -40px;
 
   }
+}
+
+.counter {
+    background-color:#A3B7CF!important;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+          font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #263238;
 }

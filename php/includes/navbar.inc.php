@@ -19,7 +19,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">  <img class="logo" src="../img/logo.png" alt="l" width="50">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="landing.php"> 
+      <a class="navbar-brand js-scroll-trigger work" href="landing.php"> 
 Útulok Piešťany</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
