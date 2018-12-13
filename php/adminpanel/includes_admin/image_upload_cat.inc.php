@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
 
 						move_uploaded_file($fileTempName, $fileDestination);
 
-						echo "<h2>SUCCESS</h2>";
+						header('location: image_upload_cat2.php');
 					}
 					}
 				}
