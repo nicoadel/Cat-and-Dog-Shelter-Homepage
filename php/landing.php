@@ -1,5 +1,13 @@
-<?php include("includes/navbar.inc.php"); ?>
-<?php  ?>
+<?php include("includes/navbar.inc.php");
+      include("includes/dbh.inc.php"); ?>
+<?php 
+$sql = "SELECT * FROM dog JOIN main_image_dog ON dog.dog_id = main_image_dog.fk_dog_id WHERE dog.dog_id = main_image_dog.fk_dog_id ORDER BY dog.dog_id DESC LIMIT 2";
+$main_dog = mysqli_query($conn, $sql);
+$result = $main_dog->fetch_all(MYSQLI_ASSOC);
+
+$sql2 = "SELECT * FROM cat JOIN main_image_cat ON cat.cat_id = main_image_cat.fk_cat_id WHERE cat.cat_id = main_image_cat.fk_cat_id ORDER BY cat.cat_id DESC LIMIT 2";
+$main_cat = mysqli_query($conn, $sql2);
+$result2 = $main_cat->fetch_all(MYSQLI_ASSOC)  ;?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../css/landing.css">
 <div class="break"></div>
@@ -97,34 +105,24 @@
         </div>
         <div class="col-10 offset-1 ">
           <div class="row justify-content-between">
+            <?php foreach ($result as $dog ) { ?>
              <div class="col-lg-3 col-md-6 mb-4 smallbox">
-               <img class="smallpic" src="../img/adorable-animal-breed-1189673.jpg" alt="">
-               <div class="top-left"><span class="imgtext">Bogyó</span></div>
+               <img class="smallpic" src="../image_upload/<?php echo $dog["main_image_dog"];  ?>" alt="">
+               <div class="top-left"><span class="imgtext"><?php echo $dog["dog_name"];  ?></span></div>
                <div class="bottomtext">
-                 <p class="landing_link">male</p>
+                 <p class="landing_link"><?php echo $dog["gender"];  ?></p>
                </div>
-             </div>
+             
+             </div><?php }; ?>
+             <?php foreach ($result2 as $cat ) { ?>
              <div class="col-lg-3 col-md-6 mb-4 smallbox">
-               <img class="smallpic" src="../img/animal-cat-cat-face-951336.jpg" alt="">
-               <div class="top-left"><span class="imgtext">Mamlasz</span></div>
+               <img class="smallpic" src="../image_upload/<?php echo $cat["main_image"];  ?>" alt="">
+               <div class="top-left"><span class="imgtext"><?php echo $cat["cat_name"];  ?></span></div>
                <div class="bottomtext">
-                 <p class="landing_link">male</p>
+                 <p class="landing_link"><?php echo $cat["gender"];  ?></p>
                </div>
-             </div>
-             <div class="col-lg-3 col-md-6 mb-4 smallbox">
-               <img class="smallpic" src="../img/adorable-animal-black-and-white-1404727.jpg" alt="">
-               <div class="top-left"><span class="imgtext">Zokni</span></div>
-              <div class="bottomtext">
-                 <p class="landing_link">female</p>
-               </div>
-             </div>
-             <div class="col-lg-3 col-md-6 mb-4 smallbox">
-               <img class="smallpic" src="../img/sponsor-cat.PNG" alt="">
-               <div class="top-left"><span class="imgtext">Bob</span></div>
-                <div class="bottomtext">
-                 <p class="landing_link">male</p>
-               </div>
-             </div>
+             
+             </div><?php }; ?>
           </div>
         </div>
        </div>
