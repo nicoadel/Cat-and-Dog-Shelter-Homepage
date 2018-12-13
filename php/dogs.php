@@ -189,6 +189,8 @@ include("includes/upload_adopt.inc.php");
       <img class="picture-content" src="#">
     <div id="caption"></div>  <!--row ends--> 
 </div><!--container ends--> 
+<div class="break">
+</div>
 <script>
 // Get thepicture
 var picBlock = document.getElementById("mypicture");
@@ -198,17 +200,11 @@ function reply_click(x){
   console.log(pictureSrc);
   //var bigPic = $('#img01');
   bigPic[0].src = pictureSrc;
-
-  
   picBlock.style.display='block';
-
 }
-
-
 $("#sca").click(function(){
     picBlock.style.display = "none";
     bigPic[0].src = ""; 
-
 });
 </script>
 <?php include("includes/footer.inc.php"); ?>

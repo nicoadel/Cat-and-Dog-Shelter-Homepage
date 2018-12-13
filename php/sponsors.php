@@ -3,19 +3,17 @@
 <?php include("includes/dbh.inc.php");
 $sql= "SELECT * FROM sponsors";
 $result = mysqli_query($conn,$sql);
-
 $newarray = $result->fetch_all(MYSQLI_ASSOC);
 ?>
-
-<div id='main' class='containerr pb-5 pt-5'>
-
+<div class="break">
+  
+</div>
+<div id='main' class='containerr pb-5 pt-5'> 
+  <div class="col-md-12 mb-4">
+      <h1 class="text-center"> Our Sponsors</h1>
+    </div>
 <?php foreach ($newarray as $key) { ?>
-
-
-		<a data-toggle="modal" data-target="#imageModal<?php echo $key["sponsors_id"];?>"><img src='<?php echo $key['sponsors_logo'] ?>' class='img-thumbnail make_bigger' alt='Cinque Terre'></a>
-
-
-
+<a data-toggle="modal" data-target="#imageModal<?php echo $key["sponsors_id"];?>"><img src='<?php echo $key['sponsors_logo'] ?>' class='img-thumbnail make_bigger mb-4' alt='Cinque Terre'></a>
  <div class="modal fade" id="imageModal<?php echo $key["sponsors_id"];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog image_modal modal-md" role="document">
     <div class="modal-content">
@@ -37,9 +35,6 @@ $newarray = $result->fetch_all(MYSQLI_ASSOC);
     </div>
   </div>
 </div>
-
-
-
 <?php } ?>
  </div>
 <?php include("includes/footer.inc.php"); ?>

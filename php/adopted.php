@@ -10,10 +10,8 @@ include("includes/output_adopted.inc.php");
 	<div class="row">
 		<div class="col-10 offset-1">
 			<h1>Adopted</h1>
-		
 			<hr>
 		</div>
-		   
 		<div class="col-10 offset-1">
 			<div class="row">
 				<?php foreach($data as $row){  ?>
@@ -63,12 +61,9 @@ include("includes/output_adopted.inc.php");
 				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				      </div>
 				    </div>
-				  </div>
-
-					
+				  </div>	
 				</div>
 			<?php }; ?>
- 
 			 		</div> 
 			</div><!--inside row ends-->
 		</div><!--col-10 ends-->
@@ -77,7 +72,9 @@ include("includes/output_adopted.inc.php");
 			<span id="sca" class="close">ix &times;</span>
 			<img class="picture-content" src="#">
 		<div id="caption"></div>	<!--row ends-->	
-</div><!--container ends-->	
+</div><!--container ends-->
+<div class="break">
+</div>	
 <script>
 // Get thepicture
 var picBlock = document.getElementById("mypicture");

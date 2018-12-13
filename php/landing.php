@@ -13,7 +13,7 @@
     <header class="masthead">
       <div class="container">
         <div class="row">
-          <div class="col-5 offset-1">
+          <div class="col-md-5 offset-md-1 carouselleft">
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -36,7 +36,7 @@
               </div>
             </div>
           </div>
-          <div class="col-5">
+          <div class="col-md-5 col-sm-10 offset-md-1 offset-sm-1">
             <div class="righttext">
               <h1 class="pb-3">Útulok Piešťany</h1>
                <form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">

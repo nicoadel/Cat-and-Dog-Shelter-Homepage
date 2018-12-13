@@ -10,10 +10,8 @@ include("includes/output_in_memoriam.inc.php");
 	<div class="row">
 		<div class="col-10 offset-1">
 			<h1>In Memoriam...</h1>
-		
 			<hr>
-		</div>
-		   
+		</div>   
 		<div class="col-10 offset-1">
 			<div class="row">
 				<?php foreach($data as $row){  ?>
@@ -64,8 +62,6 @@ include("includes/output_in_memoriam.inc.php");
 				      </div>
 				    </div>
 				  </div>
-
-					
 				</div>
 			<?php }; ?>
  
@@ -75,5 +71,6 @@ include("includes/output_in_memoriam.inc.php");
 	</div>
 		
 </div><!--container ends-->	
-
+<div class="break">
+</div>
 <?php include("includes/footer.inc.php"); ?>
