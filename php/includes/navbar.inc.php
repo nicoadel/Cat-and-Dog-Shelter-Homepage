@@ -58,15 +58,6 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Other
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="blog.php">To Read (blog)</a>
-              <a class="dropdown-item" href="docs.php">Documents</a>
-            </div>
-          </li>
           <li >
             <form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
               <input type="hidden" name="cmd" value="_s-xclick">
