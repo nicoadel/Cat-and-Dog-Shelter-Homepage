@@ -46,7 +46,7 @@
               <a class="dropdown-item" href="dogs.php">Dogs</a>
               <a class="dropdown-item" href="cats.php">Cats</a>
               <a class="dropdown-item" href="search.php">Search</a>
-              <a class="dropdown-item" href="adopted.php">Adopt</a>
+              <a class="dropdown-item" href="adoption.php">Adopt</a>
               <a class="dropdown-item" href="support.php">Support</a>
               <a class="dropdown-item" href="adopted.php">in Happy Home</a>
               <a class="dropdown-item" href="in_memoriam.php">In Memoriam</a>
