@@ -92,9 +92,6 @@ if(isset($_POST['submitOther'])) {
 		
 	
 
-	echo $imageFkId;
-	
-
 	$fileName = $file['name'];
 	$fileType = $file['type'];
 	$fileTempName = $file['tmp_name'];
@@ -153,11 +150,9 @@ if(isset($_POST['submitOther'])) {
 			exit();
 		}
 	} else {
-		echo "You need to upload a proper file type!";
+		echo "<h1>Success</h1>";
 		exit();
 	}
-
-	print_r($file);
 
 };
 }
