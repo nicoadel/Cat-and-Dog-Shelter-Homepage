@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
 					header("Location: admin_landing_page.php?upload=empty");
 					exit();
 				} else {
-					$sql = "SELECT * FROM image_dog;";
+					$sql = "SELECT * FROM main_image_dog;";
 					$stmt = mysqli_stmt_init($conn);
 					if(!mysqli_stmt_prepare($stmt, $sql)){
 						echo "SQL statement failed!";
@@ -56,7 +56,8 @@ if(isset($_POST['submit'])){
 
 						move_uploaded_file($fileTempName, $fileDestination);
 
-						header("Location: admin_landing_page.php?upload=success");
+						//header("Location: admin_landing_page.php?upload=success");
+						echo "<h1>SUCCESS</h1>";
 					}
 					}
 				}
