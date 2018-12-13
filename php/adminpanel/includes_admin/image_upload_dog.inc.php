@@ -114,7 +114,6 @@ if(isset($_POST['submitOther'])) {
 
 
 				if(empty($imageFkId)) {
-					header("Location: admin_landing_page.php?upload=empty");
 					exit();
 				} else {
 					$sql = "SELECT * FROM image_dog;";
@@ -130,7 +129,6 @@ if(isset($_POST['submitOther'])) {
 
 						$sql = "INSERT INTO image_dog(image_dog, fk_dog_id) VALUES ('".$imageFullName."', {$imageFkId} );";
 						if(!$sql){
-							header("Location: admin_landing_page.php?upload=success");
 						
 						};
 						if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -142,9 +140,6 @@ if(isset($_POST['submitOther'])) {
 
 						move_uploaded_file($fileTempName, $fileDestination);
 
-
-						//echo "Other pictures uploaded!!!!!";
-						header("Location: admin_landing_page.php?upload=success");
 					}
 					}
 				}

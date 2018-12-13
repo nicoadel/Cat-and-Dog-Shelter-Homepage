@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
 
 	
 
-	echo $imageFkId;
+
 	$file = $_FILES['file'];
 
 	$fileName = $file['name'];
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
 				$fileDestination = "../../image_upload/" . $imageFullName;
 
 				if(empty($imageFkId)) {
-					header("Location: admin_landing_page.php?upload=empty");
+					
 					exit();
 				} else {
 					$sql = "SELECT * FROM image_cat;";
@@ -90,8 +90,6 @@ if(isset($_POST['submitOther'])) {
 	foreach ($all as $file ) {
 		
 	
-
-	echo $imageFkId;
 	
 
 	$fileName = $file['name'];
@@ -113,7 +111,6 @@ if(isset($_POST['submitOther'])) {
 
 
 				if(empty($imageFkId)) {
-					header("Location: admin_landing_page.php?upload=empty");
 					exit();
 				} else {
 					$sql = "SELECT * FROM image_cat;";
@@ -129,7 +126,7 @@ if(isset($_POST['submitOther'])) {
 
 						$sql = "INSERT INTO image_cat(image_cat, fk_cat_id) VALUES ('".$imageFullName."', {$imageFkId} );";
 						if(!$sql){
-							header("Location: admin_landing_page.php?upload=success");
+
 						
 						};
 						if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -143,7 +140,6 @@ if(isset($_POST['submitOther'])) {
 
 
 						//echo "Other pictures uploaded!!!!!";
-						header("Location: admin_landing_page.php?upload=success");
 					}
 					}
 				}
@@ -157,11 +153,10 @@ if(isset($_POST['submitOther'])) {
 			exit();
 		}
 	} else {
-		echo "You need to upload a proper file type!";
+		echo "<h1>Success</h1>";
 		exit();
 	}
 
-	print_r($file);
 
 };
 }
