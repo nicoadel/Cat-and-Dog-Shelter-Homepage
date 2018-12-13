@@ -7,7 +7,7 @@ include("includes/output_team.inc.php"); ?>
 </div>
 <section id="team" class="pb-5">
     <div class="container">
-        <div class="jumbotron backg2 p-md-5 text-white rounded">
+        <div class="jumbotron backg2 p-3 p-md-5 text-white rounded">
             <div class="col-md-6 px-0">
               <h1 class="display-4 font-weight-bold">Meet Our Team</h1>
           </div>
@@ -44,3 +44,4 @@ include("includes/output_team.inc.php"); ?>
 </section>
 <!-- Team -->
 <?php include("includes/footer.inc.php"); ?>
+
