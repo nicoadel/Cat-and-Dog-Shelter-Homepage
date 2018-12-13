@@ -3,19 +3,24 @@ include("includes_admin/dbh.inc.php");
 include("includes_admin/navbar.inc.php");
 include("includes_admin/image_upload_cat.inc.php");
 ?>
-
-
+<link rel="stylesheet" type="text/css" href="../../css/admin.css">
+<div class="break">
+	
+</div>
 <div class="container">
 <div class="row">
 	<div class="col-lg-6">
-		<h2>Upload Profile Picture</h2>
+		<h2 class="mb-4">1. Upload Profile Picture</h2>
 		<form  method="post" enctype="multipart/form-data" class="mb-4">
-			<button class="btn btn-primary"><input type="file" name="file" value="add" onchange="readURL(this)"></button>
-			<button type="submit" class="btn btn-primary" name="submit">UPLOAD</button>
+			<input type="file" name="file" value="add" onchange="readURL(this)"><br>
+			<button type="submit" class=" mt-4 btn btn-primary" name="submit">UPLOAD</button>
 		</form>
+		<div class="break">
+	
+</div>
 		<hr>
 		<div>
-		<h2>Upload Other Pictures</h2>
+		<h2 class="mb-4">2. Upload Other Pictures</h2>
 		<form  method="post" enctype="multipart/form-data" class="mb-4">
 			<input type="file" name="file" class="mb-4" onchange="readURL(this);">
 			<input type="file" name="file1" class="mb-4" onchange="readURL(this);">
