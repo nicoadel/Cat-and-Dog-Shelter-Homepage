@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
 
 	
 
-	echo $imageFkId;
+
 	$file = $_FILES['file'];
 
 	$fileName = $file['name'];
@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
 						move_uploaded_file($fileTempName, $fileDestination);
 
 						//header("Location: admin_landing_page.php?upload=success");
-						header('location: image_upload_dog2.php');
+						echo "<h1>SUCCESS</h1>";
 					}
 					}
 				}
