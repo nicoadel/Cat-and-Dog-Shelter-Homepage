@@ -6,10 +6,7 @@
 </head>
 <body>
 	<?php include "includes_admin/navbar.inc.php"; ?>
-	<?php
-	if (isset($_SESSION['userUid']))
-                      {
- ?><br>
+<br>
  <div class="container">
  <table class="table table-striped">
   <thead>
@@ -57,10 +54,3 @@
 </div>
 </body>
 </html>
-
-
-
-<?php }
-else{
-	echo "<p>You shouldn't be here - log in ! </p>";
-}?>
