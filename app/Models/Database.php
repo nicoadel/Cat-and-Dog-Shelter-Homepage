@@ -5,23 +5,37 @@ namespace App\Models;
 use PDO;
 
 class Database {
+    
+    private $dbh;
+    private static $_instance;
+    private function __construct() {
 
-    //TODO: GetPDO Method
-    public static function getPDO(){
-        $dsn = 'mysql:dbname=mustafac_piestany;host=localhost;charset=UTF8';
-        $user = 'mustafac_piestany';
-        $password = 'cosmos@@';
-
+        $configData = parse_ini_file(__DIR__.'/../config.ini');
+        
         try {
-            $pdoConnexion = new PDO(
-                $dsn,
-                $user,
-                $password,
-                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+            $this->dbh = new PDO(
+                "mysql:host={$configData['DB_HOST']};dbname={$configData['DB_NAME']};charset=utf8",
+                $configData['DB_USERNAME'],
+                $configData['DB_PASSWORD'],
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING)
             );
-        } catch (PDOException $exception) {
-            echo ' Connexion échouée :' . $exception->getMessage();
         }
+        catch(\Exception $exception) {
+            echo 'Connexion error...<br>';
+            echo $exception->getMessage().'<br>';
+            echo '<pre>';
+            echo $exception->getTraceAsString();
+            echo '</pre>';
+            exit;
+        }
+    }
+
+    public static function getPDO() {
+
+        if (empty(self::$_instance)) {
+            self::$_instance = new Database();
+        }
+        return self::$_instance->dbh;
     }
 
 }

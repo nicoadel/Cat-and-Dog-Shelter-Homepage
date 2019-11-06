@@ -50,7 +50,7 @@ class RouterController
             $controllerName = "App\Controllers\\" . $target['controller'];
             $methodName = $target['method'];
             $controller = new $controllerName();
-            $controller->$methodName();
+            $controller->$methodName($this->router);
         }
     }
 }
