@@ -2,99 +2,103 @@
 
 namespace App\Models;
 
-abstract class CoreModel {
-
-    //TODO: Typehint Setters Return
+abstract class AnimalModel
+{
+    
     /**
      * Animal Id
      *
-     * @var string
+     * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * Animal Name
      *
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * Date when the animal was created in database
      *
      * @var string
      */
-    private $post_date;
+    protected $post_date;
 
     /**
      * Animal Birthdate
      *
      * @var string
      */
-    private $born_date;
+    protected $born_date;
 
     /**
      * Date when the animal profile was updated
      *
      * @var string
      */
-    private $updated_at;
+    protected $updated_at;
 
     /**
      * Animal Castration
      *
      * @var boolean
      */
-    private $castration;
+    protected $castration;
 
     /**
      * Animal official identification number
      *
      * @var string
      */
-    private $identification_number;
+    protected $identification_number;
 
     /**
      * Animal Height
      *
      * @var int
      */
-    private $height;
+    protected $height;
 
     /**
      * Animal Weight
      *
      * @var int
      */
-    private $weight;
+    protected $weight;
 
     /**
      * Animal Description
      *
-     * @var int
+     * @var string
      */
-    private $description;
+    protected $description;
 
     /**
      * Animal breed
      *
      * @var string
      */
-    private $breed;
+    protected $breed;
 
     /**
      * Animal Type
      *
      * @var string
      */
-    private $type;
+    protected $type;
+
+    /************************************** */
+    //          GETTERS & SETTERS
+    /************************************** */
 
     /**
      * Get animal Id
      *
      * @return  string
-     */ 
-    public function getId()
+     */
+    public function getId(): int
     {
         return $this->id;
     }
@@ -103,8 +107,8 @@ abstract class CoreModel {
      * Get animal Name
      *
      * @return  string
-     */ 
-    public function getName()
+     */
+    public function getName(): string
     {
         return $this->name;
     }
@@ -115,8 +119,8 @@ abstract class CoreModel {
      * @param  string  $name  Animal Name
      *
      * @return  self
-     */ 
-    public function setName(string $name)
+     */
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -127,8 +131,8 @@ abstract class CoreModel {
      * Get date when the animal was created in database
      *
      * @return  string
-     */ 
-    public function getPost_date()
+     */
+    public function getPostDate(): string
     {
         return $this->post_date;
     }
@@ -137,8 +141,8 @@ abstract class CoreModel {
      * Get animal Birthdate
      *
      * @return  string
-     */ 
-    public function getBorn_date()
+     */
+    public function getBornDate(): string
     {
         return $this->born_date;
     }
@@ -149,8 +153,8 @@ abstract class CoreModel {
      * @param  string  $born_date  Animal Birthdate
      *
      * @return  self
-     */ 
-    public function setBorn_date(string $born_date)
+     */
+    public function setBornDate(string $born_date): self
     {
         $this->born_date = $born_date;
 
@@ -161,8 +165,8 @@ abstract class CoreModel {
      * Get date when the animal profile was updated
      *
      * @return  string
-     */ 
-    public function getUpdated_at()
+     */
+    public function getUpdatedAt(): string
     {
         return $this->updated_at;
     }
@@ -173,8 +177,8 @@ abstract class CoreModel {
      * @param  string  $updated_at  Date when the animal profile was updated
      *
      * @return  self
-     */ 
-    public function setUpdated_at(string $updated_at)
+     */
+    public function setUpdatedAt(string $updated_at): self
     {
         $this->updated_at = $updated_at;
 
@@ -185,8 +189,8 @@ abstract class CoreModel {
      * Get animal Castration
      *
      * @return  boolean
-     */ 
-    public function getCastration()
+     */
+    public function getCastration(): bool
     {
         return $this->castration;
     }
@@ -197,8 +201,8 @@ abstract class CoreModel {
      * @param  boolean  $castration  Animal Castration
      *
      * @return  self
-     */ 
-    public function setCastration(bool $castration)
+     */
+    public function setCastration(bool $castration): self
     {
         $this->castration = $castration;
 
@@ -209,8 +213,8 @@ abstract class CoreModel {
      * Get animal official identification number
      *
      * @return  string
-     */ 
-    public function getIdentification_number()
+     */
+    public function getIdentificationNumber(): string
     {
         return $this->identification_number;
     }
@@ -221,8 +225,8 @@ abstract class CoreModel {
      * @param  string  $identification_number  Animal official identification number
      *
      * @return  self
-     */ 
-    public function setIdentification_number(string $identification_number)
+     */
+    public function setIdentificationNumber(string $identification_number): self
     {
         $this->identification_number = $identification_number;
 
@@ -233,8 +237,8 @@ abstract class CoreModel {
      * Get animal Height
      *
      * @return  int
-     */ 
-    public function getHeight()
+     */
+    public function getHeight(): int
     {
         return $this->height;
     }
@@ -245,8 +249,8 @@ abstract class CoreModel {
      * @param  int  $height  Animal Height
      *
      * @return  self
-     */ 
-    public function setHeight(int $height)
+     */
+    public function setHeight(int $height): self
     {
         $this->height = $height;
 
@@ -257,8 +261,8 @@ abstract class CoreModel {
      * Get animal Weight
      *
      * @return  int
-     */ 
-    public function getWeight()
+     */
+    public function getWeight(): int
     {
         return $this->weight;
     }
@@ -269,8 +273,8 @@ abstract class CoreModel {
      * @param  int  $weight  Animal Weight
      *
      * @return  self
-     */ 
-    public function setWeight(int $weight)
+     */
+    public function setWeight(int $weight): self
     {
         $this->weight = $weight;
 
@@ -280,9 +284,9 @@ abstract class CoreModel {
     /**
      * Get animal Description
      *
-     * @return  int
-     */ 
-    public function getDescription()
+     * @return  string
+     */
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -293,8 +297,8 @@ abstract class CoreModel {
      * @param  int  $description  Animal Description
      *
      * @return  self
-     */ 
-    public function setDescription(int $description)
+     */
+    public function setDescription(string $description): self
     {
         $this->description = $description;
 
@@ -305,8 +309,8 @@ abstract class CoreModel {
      * Get animal breed
      *
      * @return  string
-     */ 
-    public function getBreed()
+     */
+    public function getBreed(): string
     {
         return $this->breed;
     }
@@ -317,8 +321,8 @@ abstract class CoreModel {
      * @param  string  $breed  Animal breed
      *
      * @return  self
-     */ 
-    public function setBreed(string $breed)
+     */
+    public function setBreed(string $breed): self
     {
         $this->breed = $breed;
 
@@ -329,8 +333,8 @@ abstract class CoreModel {
      * Get animal Type
      *
      * @return  string
-     */ 
-    public function getType()
+     */
+    public function getType(): string
     {
         return $this->type;
     }
@@ -341,11 +345,39 @@ abstract class CoreModel {
      * @param  string  $type  Animal Type
      *
      * @return  self
-     */ 
-    public function setType(string $type)
+     */
+    public function setType(string $type): self
     {
         $this->type = $type;
 
         return $this;
     }
+
+    /************************************** */
+    //          CRUD METHODS
+    /************************************** */
+
+    /**
+     * Method to handle both update and insert 
+     *
+     * @return void
+     */
+    public function save(){
+        if(isset($this->id)){
+            $this->update();
+        }else{
+            $this->insert();
+        }
+
+    }
+
+    abstract public static function find(int $id);
+
+    abstract public static function findAll();
+
+    abstract public function insert();
+
+    abstract public function update();
+
+    abstract public function delete();
 }

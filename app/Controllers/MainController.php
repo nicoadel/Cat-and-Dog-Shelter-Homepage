@@ -2,12 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Models\DogModel;
+
 class MainController extends CoreController{
 
 
     private $router;
 
-    public function __construct($router){
+    public function __construct($router = ''){
         $this->$router = $router;
     }
 
@@ -16,7 +18,7 @@ class MainController extends CoreController{
      * Comment or Delete in production
      */
     public function test(){
-        $this->show('test');
+        DogModel::find(3);
     }
 
     public function landing(){
