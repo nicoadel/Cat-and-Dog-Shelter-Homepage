@@ -50,7 +50,7 @@ class UserModel {
      *
      * @return  int
      */ 
-    public function getId()
+    public function getId() : int
     {
         return $this->id;
     }
@@ -60,7 +60,7 @@ class UserModel {
      *
      * @return  string
      */ 
-    public function getUsername()
+    public function getUsername() : string
     {
         return $this->username;
     }
@@ -72,7 +72,7 @@ class UserModel {
      *
      * @return  self
      */ 
-    public function setUsername(string $username)
+    public function setUsername(string $username) : self
     {
         $this->username = $username;
 
@@ -84,7 +84,7 @@ class UserModel {
      *
      * @return  string
      */ 
-    public function getPassword()
+    public function getPassword() : string
     {
         return $this->password;
     }
@@ -96,7 +96,7 @@ class UserModel {
      *
      * @return  self
      */ 
-    public function setPassword(string $password)
+    public function setPassword(string $password) : self
     {
         $this->password = $password;
 
@@ -108,7 +108,7 @@ class UserModel {
      *
      * @return  string
      */ 
-    public function getEmail()
+    public function getEmail() : string
     {
         return $this->email;
     }
@@ -120,7 +120,7 @@ class UserModel {
      *
      * @return  self
      */ 
-    public function setEmail(string $email)
+    public function setEmail(string $email) : self
     {
         $this->email = $email;
 
@@ -132,7 +132,7 @@ class UserModel {
      *
      * @return  int
      */ 
-    public function getRole()
+    public function getRole() : int
     {
         return $this->role;
     }
@@ -144,7 +144,7 @@ class UserModel {
      *
      * @return  self
      */ 
-    public function setRole(int $role)
+    public function setRole(int $role) : self
     {
         $this->role = $role;
 
