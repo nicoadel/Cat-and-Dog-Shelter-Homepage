@@ -14,9 +14,19 @@
   <!-- Custom styles for this template -->
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <link href="../css/header.css" rel="stylesheet">
+  
+  <?php if($params['pageName'] == 'landing'): ?>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../css/landing.css">
+  <?php endif; ?>
+
+
+
+
 </head>
 <body id="page-top">
   <!-- Navigation -->
+  <!-- //TODO: Create routes and generate dynamic URL -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">  <img class="logo" src="../img/logo.png" alt="l" width="50">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger work" href="landing.php"> 
@@ -69,3 +79,4 @@
       </div>
     </div>
   </nav>
+

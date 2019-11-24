@@ -4,118 +4,149 @@ namespace App\Models;
 
 use PDO;
 
-class ReportModel extends CoreModel
+class SponsorModel extends CoreModel
 {
 
     /**
-     * Report title
+     * Sponsor name
      *
      * @var string
      */
-    private $title;
+    private $name;
 
     /**
-     * Report description
+     * Sponsor Adress
      *
      * @var string
      */
-    private $description;
+    private $adress;
 
     /**
-     * Report image
+     * Sponsor Logo
      *
      * @var string
      */
-    private $image;
+    private $logo;
 
-    const TABLE_NAME = 'report';
+    /**
+     * Sponsor Email
+     *
+     * @var string
+     */
+    private $email;
+
+    const TABLE_NAME = 'Sponsor';
 
     /************************************** */
     //          GETTERS & SETTERS
     /************************************** */
 
+
     /**
-     * Get report title
+     * Get sponsor name
      *
      * @return  string
      */
-    public function getTitle(): string
+    public function getName(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
-     * Set report title
+     * Set sponsor name
      *
-     * @param  string  $title  Report title
+     * @param  string  $name  Sponsor name
      *
      * @return  self
      */
-    public function setTitle(string $title): self
+    public function setName(string $name): self
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get report description
+     * Get sponsor Adress
      *
      * @return  string
      */
-    public function getDescription(): string
+    public function getAdress(): string
     {
-        return $this->description;
+        return $this->adress;
     }
 
     /**
-     * Set report description
+     * Set sponsor Adress
      *
-     * @param  string  $description  Report description
+     * @param  string  $adress  Sponsor Adress
      *
      * @return  self
      */
-    public function setDescription(string $description): self
+    public function setAdress(string $adress): self
     {
-        $this->description = $description;
+        $this->adress = $adress;
 
         return $this;
     }
 
     /**
-     * Get report image
+     * Get sponsor Logo
      *
      * @return  string
      */
-    public function getImage(): string
+    public function getLogo(): string
     {
-        return $this->image;
+        return $this->logo;
     }
 
     /**
-     * Set report image
+     * Set sponsor Logo
      *
-     * @param  string  $image  Report image
+     * @param  string  $logo  Sponsor Logo
      *
      * @return  self
      */
-    public function setImage(string $image): self
+    public function setLogo(string $logo): self
     {
-        $this->image = $image;
+        $this->logo = $logo;
 
         return $this;
     }
 
+    /**
+     * Get sponsor Email
+     *
+     * @return  string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set sponsor Email
+     *
+     * @param  string  $email  Sponsor Email
+     *
+     * @return  self
+     */
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
 
     /************************************** */
     //          CRUD METHODS
     /************************************** */
 
     /**
-     * Find a report by his id
+     * Find a sponsor by his id
      *
      * @param int $id
-     * @return ReportModel|false
+     * @return SponsorModel|false
      */
     public static function find(int $id)
     {
@@ -130,13 +161,13 @@ class ReportModel extends CoreModel
         $pdoStatement = $pdo->prepare($sql);
         $pdoStatement->bindValue(':id', $id, PDO::PARAM_INT);
         $pdoStatement->execute();
-        $report = $pdoStatement->fetchObject(self::class);
+        $sponsor = $pdoStatement->fetchObject(self::class);
 
-        return $report;
+        return $sponsor;
     }
 
     /**
-     * Find all reports from database
+     * Find all sponsors from database
      *
      * @return array
      */
@@ -148,32 +179,34 @@ class ReportModel extends CoreModel
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
-        $reportsArray = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
+        $sponsorsArray = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
 
-        return $reportsArray;
+        return $sponsorsArray;
     }
 
     /**
-     * Insert a new report in database
+     * Insert a new sponsor in database
      *
      * @return boolean
      */
     public function insert(): bool
     {
         $sql = "
-        INSERT INTO `" . self::TABLE_NAME . "`(`title`,`image`,`description`)
+        INSERT INTO `" . self::TABLE_NAME . "`(`logo`,`adress`,`email`,`name`)
         VALUES(
-            :title,
-            :image,
-            :description,
+            :logo,
+            :adress,
+            :email,
+            :name
         )
         ";
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->prepare($sql);
-        $pdoStatement->bindValue(':title', $this->title, PDO::PARAM_STR);
-        $pdoStatement->bindValue(':image', $this->image, PDO::PARAM_STR);
-        $pdoStatement->bindValue(':description', $this->description, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':logo', $this->logo, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':adress', $this->adress, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':name', $this->name, PDO::PARAM_STR);
         $pdoStatement->execute();
 
         $numRows = $pdoStatement->rowCount();
@@ -182,7 +215,7 @@ class ReportModel extends CoreModel
     }
 
     /**
-     * Update a report in database
+     * Update a sponsor in database
      *
      * @return boolean
      */
@@ -191,18 +224,19 @@ class ReportModel extends CoreModel
         $sql = "
         UPDATE `" . self::TABLE_NAME . "`
         SET
-            title = :title,
+            logo = :logo,
             updated_at = NOW(),
-            image = :image,
-            description = :description,
+            adress = :adress,
+            email = :email,
             WHERE id = :id";
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->prepare($sql);
         $pdoStatement->bindValue(':id', $this->id, PDO::PARAM_STR);
-        $pdoStatement->bindValue(':title', $this->title, PDO::PARAM_STR);
-        $pdoStatement->bindValue(':image', $this->image, PDO::PARAM_STR);
-        $pdoStatement->bindValue(':description', $this->description, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':logo', $this->logo, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':adress', $this->adress, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $pdoStatement->bindValue(':name', $this->name, PDO::PARAM_STR);
         $pdoStatement->execute();
 
         $numRows =  $pdoStatement->rowCount();
@@ -211,7 +245,7 @@ class ReportModel extends CoreModel
     }
 
     /**
-     * Delete a report in database
+     * Delete a sponsor in database
      *
      * @return boolean
      */
@@ -224,7 +258,7 @@ class ReportModel extends CoreModel
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->prepare($sql);
-        $pdoStatement->bindValue(':id', $this->id, \PDO::PARAM_INT);
+        $pdoStatement->bindValue(':id', $this->id, PDO::PARAM_INT);
         $pdoStatement->execute();
 
         $numRows = $pdoStatement->rowCount();

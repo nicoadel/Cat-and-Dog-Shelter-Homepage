@@ -2,14 +2,9 @@
 
 namespace App\Models;
 
-class UserModel {
+use PDO;
 
-    /**
-     * User id
-     *
-     * @var int
-     */
-    private $id;
+class UserModel {
 
     /**
      * User username
@@ -39,21 +34,11 @@ class UserModel {
      */
     private $role;
 
-    const TABLE = 'user';
+    const TABLE_NAME = 'user';
 
     /************************************** */
     //          GETTERS & SETTERS
     /************************************** */
-
-    /**
-     * Get user id
-     *
-     * @return  int
-     */ 
-    public function getId() : int
-    {
-        return $this->id;
-    }
 
     /**
      * Get user username
@@ -180,7 +165,7 @@ class UserModel {
 
         $sql = "
         SELECT *
-        FROM `".self::TABLE."`
+        FROM `".self::TABLE_NAME."`
         WHERE id = :id
         ";
 
@@ -202,7 +187,7 @@ class UserModel {
     {
         $sql = "
         SELECT *
-        FROM `".self::TABLE;
+        FROM `".self::TABLE_NAME;
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
@@ -220,7 +205,7 @@ class UserModel {
     public function insert() : bool 
     {
         $sql= "
-        INSERT INTO `".self::TABLE."` VALUES (`username`,`password`,`email`,`role`)
+        INSERT INTO `".self::TABLE_NAME."`(`username`,`password`,`email`,`role`)
         VALUES(
             :username,
             :password,
@@ -251,7 +236,7 @@ class UserModel {
     public function update() : bool
     {
         $sql = "
-        UPDATE `".self::TABLE."`
+        UPDATE `".self::TABLE_NAME."`
         SET
             username = :username,
             password = password,
@@ -281,7 +266,7 @@ class UserModel {
     {
         $sql = "
         DELETE 
-        FROM `animal`
+        FROM `".self::TABLE_NAME."`
         WHERE `id` = :id";
 
         $pdo = Database::getPDO();

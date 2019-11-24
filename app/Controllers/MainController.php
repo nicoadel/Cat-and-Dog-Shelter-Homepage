@@ -2,26 +2,22 @@
 
 namespace App\Controllers;
 
+use App\Models\CatModel;
 use App\Models\DogModel;
 
 class MainController extends CoreController{
 
-
-    private $router;
-
-    public function __construct($router = ''){
-        $this->$router = $router;
-    }
-
-    /**
-     * Methods to test stuff
-     * Comment or Delete in production
-     */
-    public function test(){
-        DogModel::find(3);
-    }
-
     public function landing(){
-        $this->show('landing');
+
+        $animalArray = [];
+
+        $pageName = "landing";
+
+        for($i=0;$i<=1;$i++){
+            $animalArray[] = DogModel::find(mt_rand(2,11));
+            $animalArray[] = CatModel::find(mt_rand(12,21));
+        }
+
+        $this->show('landing',["animalArray" => $animalArray, "pageName" => $pageName]);
     }
 }

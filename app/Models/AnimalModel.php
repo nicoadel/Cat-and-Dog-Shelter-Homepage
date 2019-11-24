@@ -2,15 +2,10 @@
 
 namespace App\Models;
 
-abstract class AnimalModel
+use DateTime;
+
+abstract class AnimalModel extends CoreModel
 {
-    
-    /**
-     * Animal Id
-     *
-     * @var int
-     */
-    protected $id;
 
     /**
      * Animal Name
@@ -20,11 +15,11 @@ abstract class AnimalModel
     protected $name;
 
     /**
-     * Date when the animal was created in database
+     * Animal Gender
      *
      * @var string
      */
-    protected $post_date;
+    protected $gender;
 
     /**
      * Animal Birthdate
@@ -32,13 +27,6 @@ abstract class AnimalModel
      * @var string
      */
     protected $born_date;
-
-    /**
-     * Date when the animal profile was updated
-     *
-     * @var string
-     */
-    protected $updated_at;
 
     /**
      * Animal Castration
@@ -94,16 +82,6 @@ abstract class AnimalModel
     /************************************** */
 
     /**
-     * Get animal Id
-     *
-     * @return  string
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
      * Get animal Name
      *
      * @return  string
@@ -128,13 +106,27 @@ abstract class AnimalModel
     }
 
     /**
-     * Get date when the animal was created in database
+     * Get animal Gender
      *
      * @return  string
-     */
-    public function getPostDate(): string
+     */ 
+    public function getGender() : string
     {
-        return $this->post_date;
+        return $this->gender;
+    }
+
+    /**
+     * Set animal Gender
+     *
+     * @param  string  $gender  Animal Gender
+     *
+     * @return  self
+     */ 
+    public function setGender(string $gender) : self
+    {
+        $this->gender = $gender;
+
+        return $this;
     }
 
     /**
@@ -157,30 +149,6 @@ abstract class AnimalModel
     public function setBornDate(string $born_date): self
     {
         $this->born_date = $born_date;
-
-        return $this;
-    }
-
-    /**
-     * Get date when the animal profile was updated
-     *
-     * @return  string
-     */
-    public function getUpdatedAt(): string
-    {
-        return $this->updated_at;
-    }
-
-    /**
-     * Set date when the animal profile was updated
-     *
-     * @param  string  $updated_at  Date when the animal profile was updated
-     *
-     * @return  self
-     */
-    public function setUpdatedAt(string $updated_at): self
-    {
-        $this->updated_at = $updated_at;
 
         return $this;
     }
@@ -353,31 +321,4 @@ abstract class AnimalModel
         return $this;
     }
 
-    /************************************** */
-    //          CRUD METHODS
-    /************************************** */
-
-    /**
-     * Method to handle both update and insert 
-     *
-     * @return void
-     */
-    public function save(){
-        if(isset($this->id)){
-            $this->update();
-        }else{
-            $this->insert();
-        }
-
-    }
-
-    abstract public static function find(int $id);
-
-    abstract public static function findAll();
-
-    abstract public function insert();
-
-    abstract public function update();
-
-    abstract public function delete();
 }

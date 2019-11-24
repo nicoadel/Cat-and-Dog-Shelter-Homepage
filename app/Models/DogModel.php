@@ -44,7 +44,7 @@ class DogModel extends AnimalModel{
         $sql = "
         SELECT *
         FROM `animal`
-        WHERE `type` = ".self::TYPE_NAME
+        WHERE `type` = '".self::TYPE_NAME."' "
         ;
 
         $pdo = Database::getPDO();
@@ -62,10 +62,12 @@ class DogModel extends AnimalModel{
      */
     public function insert() : bool 
     {
+        
         $sql= "
-        INSERT INTO `animal` VALUES (`name`,`post_date`,`born_date`,`castration`,`identification_number`,`height`,`weight`,`description`,`breed`, `type`)
+        INSERT INTO `animal`(`name`,`gender`,`created_at`,`born_date`,`castration`,`identification_number`,`height`,`weight`,`description`,`breed`, `type`)
         VALUES(
             :name,
+            :gender,
             NOW(),
             :born_date,
             :castration,
@@ -74,13 +76,14 @@ class DogModel extends AnimalModel{
             :weight,
             :description,
             :breed,
-            ".self::TYPE_NAME."
+            :type
         )
         ";
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->prepare($sql);
         $pdoStatement->bindValue(':name',$this->name,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':gender',$this->gender,PDO::PARAM_STR);
         $pdoStatement->bindValue(':born_date',$this->born_date,PDO::PARAM_STR);
         $pdoStatement->bindValue(':castration',$this->castration,PDO::PARAM_BOOL);
         $pdoStatement->bindValue(':identification_number',$this->identification_number,PDO::PARAM_STR);
@@ -88,7 +91,8 @@ class DogModel extends AnimalModel{
         $pdoStatement->bindValue(':weight',$this->weight,PDO::PARAM_INT);
         $pdoStatement->bindValue(':description',$this->description,PDO::PARAM_STR);
         $pdoStatement->bindValue(':breed',$this->breed,PDO::PARAM_STR);
-        $pdoStatement->bindValue(':type',$this->type,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':type',self::TYPE_NAME,PDO::PARAM_STR);
+        
         $pdoStatement->execute();
 
         $numRows = $pdoStatement->rowCount();
@@ -108,6 +112,7 @@ class DogModel extends AnimalModel{
         UPDATE `animal`
         SET
             name = :name,
+            gender = :gender,
             updated_at = NOW(),
             born_date = :born_date,
             castration = :castration,
@@ -122,6 +127,7 @@ class DogModel extends AnimalModel{
         $pdoStatement = $pdo->prepare($sql);
         $pdoStatement->bindValue(':id',$this->id,PDO::PARAM_STR);
         $pdoStatement->bindValue(':name',$this->name,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':gender',$this->gender,PDO::PARAM_STR);
         $pdoStatement->bindValue(':born_date',$this->born_date,PDO::PARAM_STR);
         $pdoStatement->bindValue(':castration',$this->castration,PDO::PARAM_BOOL);
         $pdoStatement->bindValue(':identification_number',$this->identification_number,PDO::PARAM_STR);
