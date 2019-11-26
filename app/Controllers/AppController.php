@@ -19,6 +19,7 @@ class AppController {
         $router->addRoutes('GET','/tests',['controller'=>'TestController','method'=>'test'],'main-test');
         $router->addRoutes('GET','/',['controller'=>'MainController','method'=>'landing'],'main-landing');
         $router->addRoutes('GET','/tests/insertFakeDog',['controller'=>'TestController','method'=>'insertFakeDog']);
+        $router->addRoutes('GET','/mission',['controller'=>'MainController','method'=>'ourMission'],'main-ourMission');
         $router->handleRequest();
     }
     

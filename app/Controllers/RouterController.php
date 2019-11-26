@@ -11,7 +11,7 @@ class RouterController
     /**
      * Altorouter container
      *
-     * @var Altorouter
+     * @var AltorRouter
      */
     private $router;
 
@@ -49,8 +49,8 @@ class RouterController
             $target = $match['target'];
             $controllerName = "App\Controllers\\" . $target['controller'];
             $methodName = $target['method'];
-            $controller = new $controllerName();
-            $controller->$methodName($this->router);
+            $controller = new $controllerName($this->router);
+            $controller->$methodName();
         }
     }
 }

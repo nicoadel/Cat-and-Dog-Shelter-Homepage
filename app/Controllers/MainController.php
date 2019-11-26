@@ -20,4 +20,11 @@ class MainController extends CoreController{
 
         $this->show('landing',["animalArray" => $animalArray, "pageName" => $pageName]);
     }
+
+    public function ourMission(){
+
+        $pageName = "ourmission";
+
+        $this->show('ourmission',["pageName" => $pageName]);
+    }
 }

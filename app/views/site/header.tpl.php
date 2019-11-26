@@ -18,7 +18,11 @@
   <?php if($params['pageName'] == 'landing'): ?>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../css/landing.css">
+  <?php elseif($params['pageName'] == 'ourmission'): ?>
+  <link rel="stylesheet" type="text/css" href="../css/ourmission.css">
   <?php endif; ?>
+
+  
 
 
 
@@ -29,7 +33,7 @@
   <!-- //TODO: Create routes and generate dynamic URL -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">  <img class="logo" src="../img/logo.png" alt="l" width="50">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger work" href="landing.php"> 
+      <a class="navbar-brand js-scroll-trigger work" href="<?= $router->generate('main-landing')?>"> 
 Útulok Piešťany</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -42,7 +46,7 @@
               About us
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="ourmission.php">Our Mission</a>
+              <a class="dropdown-item" href="<?= $router->generate('main-ourMission')?>">Our Mission</a>
               <a class="dropdown-item" href="team_page.php">Our Team</a>
               <a class="dropdown-item" href="sponsors.php">Sponsors</a>
               <a class="dropdown-item" href="gallary.php">Gallery</a>

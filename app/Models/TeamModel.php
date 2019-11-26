@@ -4,132 +4,132 @@ namespace App\Models;
 
 use PDO;
 
-class UserModel {
+class TeamModel {
 
     /**
-     * User username
+     * Team member name
      *
      * @var string
      */
-    private $username;
+    private $name;
 
     /**
-     * User password
+     * Team Member image
      *
      * @var string
      */
-    private $password;
+    private $image;
 
     /**
-     * User email
+     * Team member Description
      *
      * @var string
      */
-    private $email;
+    private $description;
 
     /**
-     * User role_id
+     * Team member Role
      *
-     * @var int
+     * @var string
      */
     private $role;
 
-    const TABLE_NAME = 'user';
+    const TABLE_NAME = 'team';
 
     /************************************** */
     //          GETTERS & SETTERS
     /************************************** */
 
     /**
-     * Get user username
+     * Get team member name
      *
      * @return  string
      */ 
-    public function getUsername() : string
+    public function getName() : string
     {
-        return $this->username;
+        return $this->name;
     }
 
     /**
-     * Set user username
+     * Set team member name
      *
-     * @param  string  $username  User username
+     * @param  string  $name  Team member name
      *
      * @return  self
      */ 
-    public function setUsername(string $username) : self
+    public function setName(string $name) : self
     {
-        $this->username = $username;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get user password
+     * Get team Member image
      *
      * @return  string
      */ 
-    public function getPassword() : string
+    public function getImage() : string
     {
-        return $this->password;
+        return $this->image;
     }
 
     /**
-     * Set user password
+     * Set team Member image
      *
-     * @param  string  $password  User password
+     * @param  string  $image  Team Member image
      *
      * @return  self
      */ 
-    public function setPassword(string $password) : self
+    public function setImage(string $image) : self
     {
-        $this->password = $password;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get user email
+     * Get team member Description
      *
      * @return  string
      */ 
-    public function getEmail() : string
+    public function getDescription() : string
     {
-        return $this->email;
+        return $this->description;
     }
 
     /**
-     * Set user email
+     * Set team member Description
      *
-     * @param  string  $email  User email
+     * @param  string  $description  Team member Description
      *
      * @return  self
      */ 
-    public function setEmail(string $email) : self
+    public function setDescription(string $description) : self
     {
-        $this->email = $email;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get user role_id
+     * Get team member Role
      *
-     * @return  int
+     * @return  string
      */ 
-    public function getRole() : int
+    public function getRole() : string
     {
         return $this->role;
     }
 
     /**
-     * Set user role_id
+     * Set team member Role
      *
-     * @param  int  $role  User role_id
+     * @param  string  $role  Team member Role
      *
      * @return  self
      */ 
-    public function setRole(int $role) : self
+    public function setRole(string $role) : self
     {
         $this->role = $role;
 
@@ -140,11 +140,11 @@ class UserModel {
     //          CRUD METHODS
     /************************************** */
 
-     /**
-     * Find a user by his id
+         /**
+     * Find a team member by his id
      *
      * @param int $id
-     * @return UserModel|false
+     * @return TeamModel|false
      */
     public static function find(int $id)
     {
@@ -165,7 +165,7 @@ class UserModel {
     }
 
     /**
-     * Find all users from database
+     * Find all team members from database
      *
      * @return array
      */
@@ -184,28 +184,28 @@ class UserModel {
     }
 
     /**
-     * Insert a new user in database
+     * Insert a new team member in database
      *
      * @return boolean
      */
     public function insert() : bool 
     {
         $sql= "
-        INSERT INTO `".self::TABLE_NAME."`(`username`,`password`,`email`,`role`)
+        INSERT INTO `".self::TABLE_NAME."`(`name`,`image`,`description`,`role`)
         VALUES(
-            :username,
-            :password,
-            :email,
+            :name,
+            :image,
+            :description,
             :role,
         )
         ";
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->prepare($sql);
-        $pdoStatement->bindValue(':username',$this->username,PDO::PARAM_STR);
-        $pdoStatement->bindValue(':password',$this->password,PDO::PARAM_STR);
-        $pdoStatement->bindValue(':email',$this->email,PDO::PARAM_STR);
-        $pdoStatement->bindValue(':role',$this->role,PDO::PARAM_INT);
+        $pdoStatement->bindValue(':name',$this->name,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':image',$this->image,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':description',$this->description,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':role',$this->role,PDO::PARAM_STR);
         $pdoStatement->execute();
 
         $numRows = $pdoStatement->rowCount();
@@ -215,7 +215,7 @@ class UserModel {
     }
 
     /**
-     * Update a user in database
+     * Update a team member in database
      *
      * @return boolean
      */
@@ -224,16 +224,16 @@ class UserModel {
         $sql = "
         UPDATE `".self::TABLE_NAME."`
         SET
-            username = :username,
-            password = :password,
-            email = :email,
+            name = :name,
+            image = :image,
+            description = :description,
             role = :role";
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->prepare($sql);
-        $pdoStatement->bindValue(':username',$this->username,PDO::PARAM_STR);
-        $pdoStatement->bindValue(':password',$this->password,PDO::PARAM_STR);
-        $pdoStatement->bindValue(':email',$this->email,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':name',$this->name,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':image',$this->image,PDO::PARAM_STR);
+        $pdoStatement->bindValue(':description',$this->description,PDO::PARAM_STR);
         $pdoStatement->bindValue(':role',$this->role,PDO::PARAM_INT);
         $pdoStatement->execute();
 
@@ -244,7 +244,7 @@ class UserModel {
     }
 
     /**
-     * Delete a user in database
+     * Delete a team member in database
      *
      * @return boolean
      */
@@ -257,11 +257,12 @@ class UserModel {
 
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->prepare($sql);
-        $pdoStatement->bindValue(':id', $this->id, \PDO::PARAM_INT);
+        $pdoStatement->bindValue(':id', $this->id, PDO::PARAM_INT);
         $pdoStatement->execute();
 
         $numRows = $pdoStatement->rowCount();
 
         return $numRows > 0;
     }
+
 }
