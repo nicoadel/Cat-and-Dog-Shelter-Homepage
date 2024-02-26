@@ -1,0 +1,14 @@
+{
+  "name": "fxdpt/cat_and_dog_shelter_homepage",
+  "description": "Fork from nicoarl/cat_and_dog_shelter",
+  "require": {
+    "altorouter/altorouter": "^1.2",
+    "symfony/var-dumper": "^4.3",
+    "fzaninotto/faker": "^1.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

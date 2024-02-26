@@ -11,10 +11,10 @@
 		<?php 
 	include_once "includes_admin/dbh.inc.php";
 	include_once "includes_admin/edit_users.inc.php";
-	  if (isset($_SESSION['userUid']))
+	//   if (isset($_SESSION['userUid']))
 	                      {
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
+	// if (isset($_GET['edit'])) {
+	// 	$id = $_GET['edit'];
 		$record = mysqli_query($conn, "SELECT * FROM users WHERE users_id=$id");
 		if (@count($record) == 1 ) {
 			$n = mysqli_fetch_array($record);
@@ -22,7 +22,7 @@
 			$email = $n['users_email'];
 			$admin = $n['users_role'];
 		}
-	}
+	// }
 ?>
 	<?php $results = mysqli_query($conn, "SELECT * FROM users"); ?>
 	<div class="card card_adminpanel">
